@@ -1,0 +1,30 @@
+# Node.js
+node_modules/
+package-lock.json
+
+# Angular & Ionic build output
+dist/
+www/
+.tmp/
+.angular/
+*.map
+
+# macOS system files
+.DS_Store
+
+# IDEs & config
+.idea/
+.vscode/
+
+# Test coverage
+coverage/
+karma.conf.js
+
+# Environment
+.env
+*.local
+
+# Capacitor / Cordova build output
+android/
+ios/
+build/
