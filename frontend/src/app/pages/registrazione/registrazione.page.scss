@@ -1,0 +1,144 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.base {
+  background: url('/assets/SfondoLogin.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 20px;
+}
+
+.logo-container {
+  text-align: center;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 15px;
+}
+
+.logo {
+  width: 80px;
+  margin-top: 8px;
+  display: block;
+}
+
+.subtitle {
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  margin: 10px 0 20px;
+}
+
+.social-button {
+  --background: #ffffff;
+  --color: #1e1e1e;
+  --border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  font-weight: 500;
+  font-size: 16px;
+  height: 50px;
+  margin: 10px 0;
+  text-transform: none;
+}
+
+.social-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 14px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #cccccc;
+  margin: 20px 0;
+}
+
+.divider .line {
+  flex: 1;
+  height: 1px;
+  background-color: #cccccc;
+}
+
+.divider .text {
+  padding: 0 10px;
+  font-size: 13px;
+  color: #cccccc;
+}
+
+.floating-input {
+  position: relative;
+  margin: 12px 0;
+  text-align: left;
+}
+
+.floating-input input {
+  width: 100%;
+  padding: 16px 16px 12px;
+  font-size: 15px;
+  border: none;
+  border-radius: 16px;
+  background: #f5f9fc;
+  color: #1e1e1e;
+  box-sizing: border-box;
+}
+
+.floating-input label {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  color: #99a3af;
+  font-size: 14px;
+  pointer-events: none;
+  transition: all 0.2s ease;
+}
+
+.floating-input input:focus + label,
+.floating-input input:not(:placeholder-shown) + label {
+  top: 4px;
+  font-size: 11px;
+  color: #48869A;
+}
+
+.password-icon {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #5f6b7a;
+  cursor: pointer;
+}
+
+
+
+ion-button.create-account {
+  --background: #48869A;
+  --border-radius: 30px;
+  font-size: 17px;
+  margin-top: 20px;
+  height: 50px;
+  color: white;
+}
+
+.signin-link {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: white;
+}
+
+.signin-link a {
+  font-weight: bold;
+  color: white;
+  text-decoration: underline;
+}

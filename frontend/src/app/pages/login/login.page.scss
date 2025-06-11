@@ -1,0 +1,96 @@
+.login-background {
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.logo {
+  width: 60px;
+  margin: 40px auto 20px;
+  display: block;
+}
+
+.login-container {
+  background: url('/assets/SfondoLogin.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  text-align: center;
+  padding: 20px;
+}
+
+h1 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+p {
+  font-size: 16px;
+  color: #cfdedf;
+}
+
+.input-item ion-input {
+  background: #226c83;
+}
+
+ion-item.input-item {
+  --inner-padding-end: 0px;
+  --inner-padding-start: 0px;
+  --padding-start: 0px;
+  --padding-end: 0px;
+  --highlight-height: 0;
+  --background: #226c83;
+  --padding-bottom: 20px;
+  border-bottom: 1px solid white;
+  position: relative;
+}
+
+
+
+.ion-label{
+  margin-bottom: 2px;
+}
+
+.forgot-password {
+  text-align: right;
+  font-size: 14px;
+  color: #cfdedf;
+  margin-top: 10px;
+}
+
+ion-button.login-button {
+  --background: #48869A;
+  --border-radius: 30px;
+  font-size: 18px;
+  margin-top: 30px;
+  color:white;
+}
+
+.password-icon {
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #ffffff;
+  cursor: pointer;
+  z-index: 10;
+}
+
+
+.signup-link {
+  margin-top: 20px;
+  font-size: 15px;
+  color: white;
+}
+
+

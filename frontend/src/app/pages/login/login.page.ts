@@ -1,15 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { RouterLink } from '@angular/router';
+
 import {
   IonButton,
-  IonContent,
-  IonHeader,
+  IonContent, IonIcon,
   IonInput,
-  IonItem,
-  IonLabel, IonText,
-  IonTitle,
-  IonToolbar
+  IonItem, IonLabel, IonText,
 } from '@ionic/angular/standalone';
 import {Router} from "@angular/router";
 import {UtenteService} from "../../Service/utente.service";
@@ -19,26 +17,25 @@ import {UtenteService} from "../../Service/utente.service";
   templateUrl: './login.page.html',
   styleUrls: ['./login.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonItem, IonLabel, IonInput, IonButton, IonText]
+  imports: [IonContent, CommonModule, FormsModule, IonItem, IonInput, IonButton, IonLabel, IonText, RouterLink, IonIcon]
 })
 export class LoginPage {
   email = '';
   password = '';
   errore = '';
-
+  showPassword = false;
   constructor(private utenteService: UtenteService, private router: Router) {}
 
+  togglePassword(): void {
+    this.showPassword = !this.showPassword;
+  }
   login() {
-    this.utenteService.login(this.email, this.password).subscribe(utenti => {
-      const utenteTrovato = utenti.find(
-          u => u.email === this.email && u.password === this.password
-      );
-
-      if (utenteTrovato) {
+    this.utenteService.login(this.email, this.password).subscribe(utente => {
+      if (utente) {
         console.log('Login riuscito');
-        this.router.navigateByUrl('/home-benvenuto');
+        this.router.navigateByUrl('/home-benvenuto');  // Naviga alla home
       } else {
-        this.errore = 'Credenziali non valide';
+        this.errore = 'Credenziali non valide';  // Mostra messaggio di errore
       }
     });
   }

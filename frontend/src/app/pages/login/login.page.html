@@ -1,23 +1,41 @@
-<ion-header>
-    <ion-toolbar>
-        <ion-title>Login</ion-title>
-    </ion-toolbar>
-</ion-header>
+<ion-content class="login-background">
+    <div class="login-container">
+        <img src="assets/Logo.png" alt="Serenity logo" class="logo" />
+        <h1>Sign In</h1>
+        <p>Sign in now to free your mind.</p>
 
-<ion-content class="ion-padding">
-    <ion-item>
-        <ion-label position="floating">Email</ion-label>
-        <ion-input [(ngModel)]="email" type="email"></ion-input>
-    </ion-item>
+        <ion-item lines="none" class="input-item">
+            <ion-label position="floating" style="margin-bottom: 5px;">Email</ion-label>
+            <ion-input placeholder="Email" [(ngModel)]="email" type="email"></ion-input>
+        </ion-item>
 
-    <ion-item>
-        <ion-label position="floating">Password</ion-label>
-        <ion-input [(ngModel)]="password" type="password"></ion-input>
-    </ion-item>
+        <ion-item lines="none" class="input-item">
+            <ion-label position="floating">Password</ion-label>
+            <ion-input
+                    placeholder="Password"
+                    [(ngModel)]="password"
+                    [type]="showPassword ? 'text' : 'password'"
+            ></ion-input>
+            <ion-icon
+                    slot="end"
+                    [name]="showPassword ? 'eye-outline' : 'eye-off-outline'"
+                    class="password-icon"
+                    (click)="togglePassword()"
+            ></ion-icon>
+        </ion-item>
 
-    <ion-button expand="full" (click)="login()">Accedi</ion-button>
 
-    <ion-text color="danger" *ngIf="errore">
-        <p>{{ errore }}</p>
-    </ion-text>
+        <div class="forgot-password">Forgot Password?</div>
+
+        <ion-button class="login-button" expand="full" (click)="login()" >Accedi</ion-button>
+
+        <!--DEVE APPARIRE SOLO SE DAVVERO SBAGLIATE-->
+        <ion-text color="danger" *ngIf="errore">
+            <p>{{ errore }}</p>
+        </ion-text>
+
+        <div class="signup-link">
+            Don’t have an account?<a routerLink="/registrazione"> <strong>Sign Up</strong></a>
+        </div>
+    </div>
 </ion-content>
