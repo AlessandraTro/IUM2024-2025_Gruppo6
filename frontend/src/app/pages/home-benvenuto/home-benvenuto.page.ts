@@ -1,24 +1,23 @@
 import { Component, OnInit } from '@angular/core';
-import {CommonModule, NgOptimizedImage} from '@angular/common';
+import {CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import {
   IonAvatar,
   IonButton, IonButtons,
-  IonCard, IonCardContent,
-  IonCardHeader,
-  IonCardTitle, IonCol,
+  IonCol,
   IonContent, IonFooter, IonGrid,
   IonHeader, IonRow,
   IonTitle,
   IonToolbar
 } from '@ionic/angular/standalone';
+import {RouterLink} from "@angular/router";
 
 @Component({
   selector: 'app-home-benvenuto',
   templateUrl: './home-benvenuto.page.html',
   styleUrls: ['./home-benvenuto.page.scss'],
   standalone: true,
-  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonFooter, IonButton, IonCol, IonRow, IonButtons, IonAvatar, IonGrid]
+  imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, IonFooter, IonButton, IonCol, IonRow, IonButtons, IonAvatar, IonGrid, RouterLink]
 })
 export class HomeBenvenutoPage implements OnInit {
   username: string = '';  // Variabile per il nome utente
