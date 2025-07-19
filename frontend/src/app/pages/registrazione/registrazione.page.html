@@ -9,15 +9,16 @@
             <h2 class="subtitle">Sign Up</h2>
         </div>
 
-        <ion-button expand="block" fill="solid" class="social-button">
-            <img ngSrc="assets/apple-logo.png" alt="Apple" class="social-icon" height="768" width="625"/>
+        <ion-button expand="block" fill="solid" class="social-button" (click)="redirectToApple()">
+            <img src="assets/apple-logo.png" alt="Apple" class="social-icon" />
             <span>Continue with Apple</span>
         </ion-button>
 
-        <ion-button expand="block" fill="solid" class="social-button">
-            <img ngSrc="assets/google-logo.png" alt="Google" class="social-icon" height="768" width="768"/>
+        <ion-button expand="block" fill="solid" class="social-button" (click)="redirectToGoogle()">
+            <img src="assets/google-logo.png" alt="Google" class="social-icon" />
             <span>Continue with Google</span>
         </ion-button>
+
 
 
 

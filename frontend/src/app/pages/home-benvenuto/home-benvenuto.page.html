@@ -1,40 +1,54 @@
-<ion-header xmlns:height="http://www.w3.org/1999/xhtml">
-    <ion-toolbar>
-        <ion-title>Benvenuta {{ username }}!</ion-title>
-        <ion-buttons slot="end">
-            <ion-avatar>
+<ion-header>
+    <ion-toolbar class="custom-header-toolbar">
+        <div class="header-container">
+            <!-- Logo a sinistra -->
+            <div class="header-logo">
+                <img src="assets/Logo_Black.png" alt="Logo Serenity" />
+            </div>
+
+            <!-- Titolo centrale -->
+            <div class="header-title">
+                Benvenuta {{ username }}!
+            </div>
+
+            <!-- Avatar a destra -->
+            <!--DA TOGLIERE, MI SERVE SOLO PER LE PROVE-->
+            <div class="header-avatar" (click)="logout()" style="cursor: pointer;">
                 <img src="assets/profilo.png" alt="Avatar" />
-            </ion-avatar>
-        </ion-buttons>
+            </div>
+        </div>
     </ion-toolbar>
 </ion-header>
 
+
+
 <ion-content class="ion-padding">
-    <p class="domanda">Come ti senti oggi?</p>
+
 
     <!-- Emozioni con immagini -->
-    <ion-grid>
+    <ion-grid *ngIf="!selectedEmotion">
+        <p class="domanda">Come ti senti oggi?</p>
         <ion-row>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Calma')">
                     <img src="assets/img/calma.png" alt="Calma" />
                     <p>Calma</p>
                 </div>
             </ion-col>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Felicita')">
                     <img src="assets/img/felice.svg" alt="Felicità" />
                     <p>Felicità</p>
                 </div>
             </ion-col>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Focus')">
                     <img src="assets/img/focus.png" alt="Focus" />
                     <p>Focus</p>
                 </div>
             </ion-col>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Ansioso')">
                     <img src="assets/img/ansia.png" alt="Ansioso" />
                     <p>Ansioso</p>
                 </div>
@@ -42,31 +56,52 @@
         </ion-row>
         <ion-row>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Tristezza')">
                     <img src="assets/img/tristezza.svg" alt="Tristezza" />
                     <p>Tristezza</p>
                 </div>
             </ion-col>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Paura')">
                     <img src="assets/img/paura.png" alt="Paura" />
                     <p>Paura</p>
                 </div>
             </ion-col>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Rabbia')">
                     <img src="assets/img/rabbia.svg" alt="Rabbia" />
                     <p>Rabbia</p>
                 </div>
             </ion-col>
             <ion-col size="3" class="ion-text-center">
-                <div class="custom-button">
+                <div class="custom-button" (click)="selectEmotion('Altro')">
                     <img src="assets/img/altro.svg" alt="Altro" />
                     <p>Altro</p>
                 </div>
             </ion-col>
+
+
         </ion-row>
     </ion-grid>
+    <div class="custom-modal-backdrop" *ngIf="showCustomModal">
+        <div class="custom-modal">
+            <div class="custom-modal-header">
+                <h2>Come ti senti?</h2>
+                <button class="close-button" (click)="closeModal()">×</button>
+            </div>
+            <div class="custom-modal-body">
+                <label for="emotionText">Descrivi il tuo stato d’animo:</label>
+                <textarea id="emotionText" [(ngModel)]="customEmotionText" placeholder="Scrivi qui..."></textarea>
+                <button class="save-button" (click)="saveCustomEmotion()">Salva</button>
+            </div>
+        </div>
+    </div>
+
+    <div *ngIf="selectedEmotion" class="motivational-card">
+        <h2>Frase Motivazionale</h2>
+        <p>{{ motivationalPhrase }}</p>
+        <img [src]="selectedEmotionImage" alt="{{ selectedEmotion }}" style="width: 50px; height: 50px;">
+    </div>
 
     <!-- Card di contenuti -->
     <div class="custom-card">
@@ -83,7 +118,7 @@
         <div class="card-header">
             <img src="assets/img/progressi.png" alt="Progressi" class="card-icon" height="150" width="150"/>
 
-            <div class="card-content">
+            <div class="card-content" [routerLink]="['/progressi']">
                 <h3>Visualizza Progressi</h3>
                 Resta aggiornato sui tuoi progressi emotivi.
             </div>
@@ -94,7 +129,7 @@
     <div class="doppio">
     <div class="custom-card-doppio2">
         <div class="card-header-doppio">
-            <div class="card-content-doppio">
+            <div class="card-content-doppio" [routerLink]="['/sound-escape']">
                 <h3>Respira</h3>
                 Fai un esercizio di rilassamento.
             </div>
@@ -114,7 +149,7 @@
     <div class="custom-card">
         <div class="card-header">
             <img src="assets/chat.png" alt="Parla con ..." class="card-icon" height="90" width="90" />
-            <div class="card-content">
+            <div class="card-content" [routerLink]="['/chat']">
                 <h3>Parla con ...</h3>
                 Parla con l'AI, sfogati e non sentirti giudicato.
             </div>
@@ -122,9 +157,5 @@
     </div>
 </ion-content>
 
+<app-footer></app-footer>
 
-<ion-footer>
-    <ion-toolbar>
-        <ion-button expand="full">Home</ion-button>
-    </ion-toolbar>
-</ion-footer>

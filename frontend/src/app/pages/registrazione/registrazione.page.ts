@@ -22,7 +22,7 @@ import {AuthService} from "../../Service/auth.service";
   templateUrl: './registrazione.page.html',
   styleUrls: ['./registrazione.page.scss'],
   standalone: true,
-    imports: [IonContent, CommonModule, FormsModule, IonButton, IonIcon, NgOptimizedImage, RouterLink]
+    imports: [IonContent, CommonModule, FormsModule, IonButton, IonIcon, RouterLink]
 })
 export class RegistrazionePage implements OnInit {
 
@@ -41,31 +41,39 @@ export class RegistrazionePage implements OnInit {
             this.authService.registerUser(this.name, this.email, this.password).subscribe({
                 next: async (response) => {
                     console.log('User registered successfully:', response);
-                    // Mostra il toast di successo
                     await (await this.toastController.create({
-                        message: 'Registration successful!',
+                        message: 'Registrazione avvenuta con successo!',
                         duration: 2000,
                         color: 'success'
                     })).present();
-                    this.router.navigate(['/login']);  // Redirect alla pagina di login
+                    this.router.navigate(['/login']);
                 },
                 error: async (error) => {
-                    console.error('Registration failed:', error);
-                    // Mostra il toast di errore
+                    console.error('Errore registrazione:', error);
                     await (await this.toastController.create({
-                        message: 'Registration failed. Please try again later.',
+                        message: error === 'Email già registrata' ? 'Email già registrata!' : 'Registrazione fallita.',
                         duration: 2000,
                         color: 'danger'
                     })).present();
                 }
             });
         } else {
-            // Mostra il toast per i campi mancanti
             await (await this.toastController.create({
-                message: 'Please fill in all fields',
+                message: 'Compila tutti i campi.',
                 duration: 2000,
                 color: 'warning'
             })).present();
         }
     }
+
+    redirectToApple(): void {
+        // Reindirizza alla pagina ufficiale Apple ID login
+        window.location.href = 'https://appleid.apple.com/auth/authorize';
+    }
+
+    redirectToGoogle(): void {
+        // Reindirizza alla pagina ufficiale di Google OAuth (demo scope)
+        window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth';
+    }
+
 }

@@ -13,16 +13,19 @@ export class InMemoryDataService implements InMemoryDbService {
   ];
 
   createDb() {
-    // Controlla se nel localStorage ci sono utenti
-    let utenti = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+    const storageKey = this.storageKey;
+    let utenti = JSON.parse(localStorage.getItem(storageKey) || '[]');
 
-    // Se non ci sono utenti, aggiungi l'utente predefinito
-    if (utenti.length === 0) {
-      utenti = this.utenti;  // Imposta il valore predefinito
-      localStorage.setItem(this.storageKey, JSON.stringify(utenti)); // Salva nel localStorage
+    // Controlla se Sara è già presente
+    const saraPresente = utenti.some((u: any) => u.email.toLowerCase() === 'saravitale@gmail.com');
+
+    if (!saraPresente) {
+      // Aggiungi Sara all'elenco solo se non c'è già
+      utenti.push(...this.utenti);
+      localStorage.setItem(storageKey, JSON.stringify(utenti));
     }
 
-    return { utenti };  // Ritorna gli utenti in memoria
+    return { utenti };
   }
 
   addUser(user: any) {
@@ -36,6 +39,11 @@ export class InMemoryDataService implements InMemoryDbService {
       email: user.email,
       password: user.password
     };
+
+    if (utenti.some((u: any) => u.email.toLowerCase() === user.email.toLowerCase())) {
+      console.error('Email già registrata');
+      return null;
+    }
 
     // Aggiungi l'utente all'array
     utenti.push(nuovoUtente);

@@ -24,18 +24,23 @@ export class LoginPage {
   password = '';
   errore = '';
   showPassword = false;
-  constructor(private utenteService: UtenteService, private router: Router) {}
+  constructor(private utenteService: UtenteService, private router: Router) {this.utenteService.initializeUtenti();}
 
   togglePassword(): void {
     this.showPassword = !this.showPassword;
   }
   login() {
+    // Stampa tutti gli utenti salvati nel localStorage
+    const utentiRegistrati = JSON.parse(localStorage.getItem('utenti') || '[]');
+    console.log('Tutti gli utenti registrati:', utentiRegistrati);
+
     this.utenteService.login(this.email, this.password).subscribe(utente => {
       if (utente) {
-        console.log('Login riuscito');
-        this.router.navigateByUrl('/home-benvenuto');  // Naviga alla home
+        console.log('Login riuscito:', utente);
+        localStorage.setItem('utenteLoggato', JSON.stringify(utente));  // salva l’utente giusto
+        this.router.navigateByUrl('/home-benvenuto');
       } else {
-        this.errore = 'Credenziali non valide';  // Mostra messaggio di errore
+        this.errore = 'Credenziali non valide';
       }
     });
   }
