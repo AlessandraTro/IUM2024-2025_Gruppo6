@@ -1,0 +1,62 @@
+<ion-header>
+    <div class="custom-header">
+        <div class="left-section" [routerLink]="['/home-benvenuto']">
+            <ion-icon name="arrow-back-outline" class="back-icon"></ion-icon>
+            <img src="assets/Logo_Black.png" alt="Serenity Logo" class="serenity-logo" />
+        </div>
+        <div class="center-section">
+            <span class="serenity-title">Serenity</span>
+        </div>
+        <div class="right-section">
+            <div class="chat-icon-container">
+                <ion-icon name="chatbubble-ellipses-outline" class="chat-icon"></ion-icon>
+            </div>
+        </div>
+    </div>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="chat-content">
+    <div class="background-decor"></div>
+
+    <div class="chat-area" *ngIf="chatHistory.length > 0; else introText">
+        <div class="message" *ngFor="let msg of chatHistory" [ngClass]="msg.sender">
+            <p>{{ msg.text }}</p>
+        </div>
+    </div>
+
+    <ng-template #introText>
+        <div class="intro-text-container">
+            <p class="intro-text">
+                Inizia una nuova conversazione<br />
+                con <strong>SERENITY</strong>, la tua AI<br />
+                personalizzata.
+            </p>
+        </div>
+    </ng-template>
+</ion-content>
+
+<ion-footer class="footer-wrapper no-shadow">
+    <div class="chat-bottom-bar">
+        <div class="chat-pill">
+            <div class="pill-left">
+                <button class="icon-btn"><ion-icon name="add-outline"></ion-icon></button>
+                <button class="icon-btn"><ion-icon name="happy-outline"></ion-icon></button>
+            </div>
+            <input type="text"
+                   [(ngModel)]="message"
+                   placeholder="Type  a message"
+                   class="chat-textbox"
+                   (keyup.enter)="sendMessage()" />
+
+            <button class="icon-btn" (click)="sendMessage()">
+                <ion-icon name="send-outline"></ion-icon>
+            </button>
+
+        </div>
+        <div class="chat-icons">
+            <button class="icon-btn"><ion-icon name="mic-outline"></ion-icon></button>
+            <button class="icon-btn"><ion-icon name="camera-outline"></ion-icon></button>
+        </div>
+    </div>
+    <div class="iphone-bar"></div>
+</ion-footer>

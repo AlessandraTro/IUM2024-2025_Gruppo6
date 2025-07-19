@@ -1,0 +1,37 @@
+.track-card {
+  height: 180px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  border-radius: 16px;
+  margin-bottom: 20px;
+
+  .overlay {
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    height: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    .level {
+      background-color: rgba(255, 255, 255, 0.2);
+      font-size: 0.75rem;
+      align-self: flex-start;
+    }
+
+    .info {
+      h2 {
+        font-size: 1.2rem;
+        margin-bottom: 4px;
+      }
+      .details {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.9rem;
+      }
+    }
+  }
+}

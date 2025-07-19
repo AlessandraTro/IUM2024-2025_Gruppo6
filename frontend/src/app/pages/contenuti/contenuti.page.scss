@@ -1,0 +1,267 @@
+.contenuti-content {
+  --background: #fff5ed;
+  padding: 16px;
+}
+
+.sottotitolo {
+  padding: 12px 0;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+}
+
+.box {
+  border-radius: 20px;
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.evidenziato {
+  background: #FFC97E;
+}
+
+.evidenziato-scuro {
+  background: #F29A31;
+  color: black;
+}
+
+.orizzontale {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.consigliato {
+  background: #fff9c4;
+}
+
+.titolo {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.sottotesto {
+  font-size: 13px;
+  color: #666;
+}
+
+.meditation-info {
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+.recommended-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.custom-card {
+  background-color: #FFC97E;
+  border-radius: 20px;
+  padding: 16px;
+  width: 48%;
+  position: relative;
+  overflow: hidden;
+  min-height: 120px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-text {
+  padding-right: 25px;
+  z-index: 2;
+  margin-top: 15px;
+  color:black;
+}
+
+.card-img {
+  position: absolute;
+  top: 9px;
+  right: 0px;
+  height: 64px;
+  max-width: 50%;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.card-img2{
+  position: absolute;
+  top: 9px;
+  right: -37px;
+  height: 64px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.horizontal-card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 20px;
+  padding: 16px;
+  margin-bottom: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100px;
+  color: black;
+}
+
+.play-icon {
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+.horizontal-card .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.horizontal-card .titolo {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.horizontal-card .sottotesto {
+  font-size: 13px;
+  color: #333;
+}
+
+.horizontal-card .meditation-info {
+  margin-top: 4px;
+  font-size: 11px;
+  font-weight: bold;
+}
+
+.recommended-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.recommended-card {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: none;
+}
+
+.recommended-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.recommended-text {
+  padding-top: 8px;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 1px 6px 15px;
+}
+
+.recommended-text .titolo {
+  font-weight: bold;
+  font-size: 15px;
+  color: #222;
+}
+
+.recommended-text .sottotesto {
+  font-size: 13px;
+  color: #999;
+}
+
+.newss{
+  padding-bottom: 20px;
+}
+
+.custom-header {
+  --background: #f5e4d9; // colore beige chiaro
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.custom-back-title {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  justify-content: space-between;
+  width: 100%;
+  color: black;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-icon {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.back-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* Rimuove la sottolineatura dei link */
+a {
+  text-decoration: none;
+}
+
+/* Eventuale aggiunta per rimuovere la sottolineatura solo se è applicata da altri stili */
+a:hover {
+  text-decoration: none;
+}
+
+.custom-card,
+.horizontal-card,
+.recommended-card {
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 1;
+  position: relative;
+}
+
+.custom-card * {
+  pointer-events: none; // forza il click sul contenitore
+}

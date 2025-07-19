@@ -1,0 +1,144 @@
+<ion-header>
+    <ion-toolbar color="light">
+        <ion-title>Mood Tracker</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-content">
+
+    <!-- Testo viola sopra la card -->
+    <p class="mood-completed">Daily mood log completato!</p>
+
+    <!-- Card riempita beige chiaro con emoji e testo -->
+    <div class="mood-summary">
+        <div class="mood-header">
+            <img src="assets/img/felice.svg" alt="Happy" class="emoji" />
+            <div>
+                <h2>Happy Mood</h2>
+                <p>Wow, Grandioso! Ti senti felice oggi! Continua così!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weekly-report-card">
+        <h3>Weekly Report</h3>
+
+        <div class="emoji-legend">
+            <div class="legend-item">
+                <img src="assets/img/paura.png" alt=" 😱" />
+                <span class="dot" style="background-color: #ffe600"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/felice.svg" alt="🙂" />
+                <span class="dot" style="background-color: #d6b4fc"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/calma.png" alt="😌" />
+                <span class="dot" style="background-color: #f8d1ed"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/tristezza.svg" alt="😟" />
+                <span class="dot" style="background-color: #ffb9a2"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/rabbia.svg" alt="😡" />
+                <span class="dot" style="background-color: #e1701e"></span>
+            </div>
+        </div>
+
+        <div class="bar-chart">
+            <div class="bar" style="height: 40%; background-color: #e1701e;"></div>
+            <div class="bar" style="height: 65%; background-color: #d6b4fc;"></div>
+            <div class="bar" style="height: 95%; background-color: #ffe600;"></div>
+            <div class="bar" style="height: 60%; background-color: #ffb9a2;"></div>
+            <div class="bar" style="height: 35%; background-color: #e1701e;"></div>
+            <div class="bar" style="height: 75%; background-color: #d6b4fc;"></div>
+            <div class="bar" style="height: 90%; background-color: #f8d1ed;"></div>
+        </div>
+
+        <div class="bar-labels">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+        </div>
+    </div>
+
+
+
+    <div class="calendar-card">
+        <div class="calendar-header">
+            <button class="arrow">&lt;</button>
+            <h3>May</h3>
+            <button class="arrow">&gt;</button>
+        </div>
+
+        <div class="calendar-grid">
+            <div class="weekdays">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+            </div>
+
+            <div class="calendar-days">
+                <!-- RIGA 1 -->
+                <div class="day emoji"><img src="assets/img/rabbia.svg" alt="😡"/><span>1</span></div>
+                <div class="day">2</div>
+                <div class="day">3</div>
+                <div class="day emoji"><img src="assets/img/tristezza.svg" alt="😟"/><span>4</span></div>
+                <div class="day">5</div>
+                <div class="day emoji"><img src="assets/img/felice.svg" alt="🙂"/><span>6</span></div>
+                <div class="day">7</div>
+
+                <!-- RIGA 2 -->
+                <div class="day">8</div>
+                <div class="day emoji"><img src="assets/img/paura.png" alt="😁"/><span>9</span></div>
+                <div class="day">10</div>
+                <div class="day">11</div>
+                <div class="day">12</div>
+                <div class="day">13</div>
+                <div class="day">14</div>
+
+                <!-- RIGA 3 -->
+                <div class="day">15</div>
+                <div class="day">16</div>
+                <div class="day">17</div>
+                <div class="day">18</div>
+                <div class="day emoji"><img src="assets/img/tristezza.svg" alt="😟"/><span>19</span></div>
+                <div class="day">20</div>
+                <div class="day">21</div>
+
+                <!-- RIGA 4 -->
+                <div class="day">22</div>
+                <div class="day">23</div>
+                <div class="day">24</div>
+                <div class="day">25</div>
+                <div class="day">26</div>
+                <div class="day">27</div>
+                <div class="day">28</div>
+
+                <!-- RIGA 5: giorni grigi del mese successivo -->
+                <div class="day faded">29</div>
+                <div class="day faded">30</div>
+                <div class="day faded">1</div>
+                <div class="day faded">2</div>
+                <div class="day faded">3</div>
+                <div class="day faded special">4</div>
+                <div class="day faded special">5</div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

@@ -1,0 +1,60 @@
+<ion-content *ngIf="data" [fullscreen]="true" class="ion-padding">
+
+    <!-- HEADER COMPLETO -->
+    <div class="header-image" [style.backgroundImage]="'url(' + data.image + ')'">
+
+        <!-- Pulsanti -->
+        <div class="top-buttons">
+            <div class="btn-back" (click)="goBack()">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </div>
+            <div class="btn-icon">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            </div>
+        </div>
+
+        <!-- Testi -->
+        <div class="header-overlay">
+            <h1 class="header-title">{{ data.title }}</h1>
+            <span class="header-practices">{{ data.subtitle }}</span>
+            <p class="header-description">{{ data.description }}</p>
+        </div>
+    </div>
+
+
+    <!-- Search bar -->
+    <div class="search-bar">
+        <ion-icon name="search-outline"></ion-icon>
+        <input type="text" placeholder="Cosa vuoi ascoltare?" />
+        <ion-icon name="options-outline"></ion-icon>
+    </div>
+
+
+    <!-- Sezioni dinamiche -->
+    <div *ngFor="let section of data.categories">
+        <div class="section-title">
+            <span>{{ section.title }}</span>
+            <span>{{ section.sessions }} sessioni</span>
+        </div>
+
+        <div class="cards-grid">
+            <div class="session-card" *ngFor="let card of section.items">
+                <div class="card-image" [style.backgroundImage]="'url(' + card.image + ')'">
+                    <div class="card-overlay">
+                        <h4>{{ card.title }}</h4>
+                        <div class="meta">
+                            <ion-icon name="mic-outline" *ngIf="card.guided === 'Guidato'"></ion-icon>
+                            <ion-icon name="mic-off-outline" *ngIf="card.guided !== 'Guidato'"></ion-icon>
+                            <span>{{ card.guided }}</span>
+                            <ion-icon name="time-outline"></ion-icon>
+                            <span>{{ card.duration }}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</ion-content>
+

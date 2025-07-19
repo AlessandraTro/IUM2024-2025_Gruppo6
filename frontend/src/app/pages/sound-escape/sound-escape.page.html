@@ -1,0 +1,48 @@
+<ion-header translucent>
+    <ion-toolbar class="custom-toolbar">
+        <ion-buttons slot="start">
+            <div class="back-button" (click)="goBack()"><ion-icon name="chevron-back" class="back-icon"></ion-icon></div>
+        </ion-buttons>
+        <ion-title>SoundScape</ion-title>
+        <ion-buttons slot="end">
+            <ion-icon name="musical-note" slot="icon-only"></ion-icon>
+        </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+
+    <app-track-card
+            level="Principiante"
+            title="Sonno Profondo"
+            guided="Non Guidato"
+            duration="8 min"
+            image="assets/sound-escape/deep-sleep.png"
+            (cardClicked)="openPage('deepSleep')">
+    </app-track-card>
+
+    <app-track-card
+            level="Principiante"
+            title="Addormentarsi velocemente"
+            guided="Guidato"
+            duration="15 min"
+            image="assets/sound-escape/fall-aspleep.png"
+            (cardClicked)="openPage('fallAsleepFast')">
+    </app-track-card>
+
+    <app-track-card
+            level="Intermedio"
+            title="Suoni della Natura"
+            guided="Guidato"
+            duration="4:25 h"
+            image="assets/sound-escape/sound-nature.png"
+            (cardClicked)="openPage('soundOfNature')">
+    </app-track-card>
+
+
+</ion-content>
+
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>
+
