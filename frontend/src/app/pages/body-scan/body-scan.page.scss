@@ -1,0 +1,56 @@
+.meditation-image {
+  border-radius: 12px;        /* Rende i bordi arrotondati */
+  margin-top: 16px;           /* Distanza dall'elemento sopra */
+  object-fit: cover;          /* Rende l'immagine che copra l'area senza deformarsi */
+  width: 300px;               /* Larghezza fissa */
+  height: 300px;              /* Altezza fissa */
+  display: block;             /* Rende l'immagine un elemento di blocco per il centering */
+  margin: 16px auto;          /* Centra orizzontalmente e aggiunge uno spazio sopra/sotto */
+}
+
+.time-indicator {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;           /* Riduce la dimensione del testo */
+  padding: 0 4px;              /* Spaziatura laterale */
+  margin-top: -12px;           /* Allontana la barra dal contenuto sopra */
+  margin-bottom: 16px;         /* Spazio sotto */
+  color: var(--ion-color-dark); /* Colore del testo */
+}
+
+.audio-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 32px;             /* Grandezza delle icone */
+  margin-bottom: 1.5rem;       /* Distanza dalla sezione successiva */
+}
+
+.audio-controls ion-icon {
+  color: var(--ion-color-medium); /* Colore delle icone audio */
+}
+
+.play-btn {
+  font-size: 48px;             /* Dimensione del bottone play */
+  color: var(--ion-color-primary); /* Colore primario per il play */
+}
+
+.benefit-box {
+  background-color: #fdecec;  /* Colore di sfondo rosato per il box */
+  padding: 12px;              /* Spaziatura interna */
+  border-radius: 8px;         /* Bordi arrotondati */
+  font-size: 0.95rem;         /* Leggermente più piccolo per migliorare la leggibilità */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Leggerissima ombra per un effetto tridimensionale */
+}
+
+.benefit-box p {
+  margin: 0;                  /* Rimuove margini extra per una spaziatura coerente */
+  color: var(--ion-color-dark); /* Colore del testo */
+}
+:host .ionicon {
+  color: #fdecec; /* Cambia il colore dell'icona */
+}
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+  --color: #1c1c1c;
+}

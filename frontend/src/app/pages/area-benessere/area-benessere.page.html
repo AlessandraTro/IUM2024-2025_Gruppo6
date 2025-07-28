@@ -1,0 +1,84 @@
+<ion-header>
+    <ion-toolbar class="top-header">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/area-benessere"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Area Benessere</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <div class="top-banner">
+        <div class="user-info">
+            <img class="avatar" src="assets/profilo.png" alt="Foto Sara">
+            <div class="welcome-message">
+                <strong>Benvenuta Sara,</strong><br>
+                <span>nell’area benessere</span>
+            </div>
+            <div class="stats-icon">
+                <ion-icon name="stats-chart-outline"></ion-icon>
+            </div>
+        </div>
+
+        <div class="quote">
+            <p>
+                <em>
+                    Il tuo benessere è la tua forza:<br>
+                    ogni piccolo gesto per prenderti cura<br>
+                    di te stessa è un grande passo verso<br>
+                    una vita più sana, consapevole e felice.
+                </em>
+            </p>
+        </div>
+    </div>
+
+    <!-- Tile grande meditazione - CLICCABILE -->
+    <div class="tile-row">
+    <div class="tile tile-large meditation" routerLink="/meditazione">
+        <img src="assets/img/area-benessere/meditation.png" alt="meditation icon" class="tile-icon" />
+        <span>Inizia Meditazione</span>
+    </div>
+    </div>
+
+    <!-- Prima riga tile -->
+    <div class="tile-row">
+        <div class="tile respiration">
+            <img src="assets/img/area-benessere/heart.png" alt="heart icon" class="tile-icon" />
+            <span>Esercizi di<br>Respirazione</span>
+        </div>
+
+        <div class="tile soundscape">
+            <img src="assets/img/area-benessere/musica.png" alt="musica icon" class="tile-icon" />
+            <span>Soundscape</span>
+        </div>
+    </div>
+
+    <!-- Seconda riga tile con link -->
+    <div class="tile-row">
+        <div class="tile tile-large obiettivi" routerLink="/obiettivi">
+            <img src="assets/img/area-benessere/obiettivi.png" alt="obiettivi icon" class="tile-icon" />
+            <span>Obiettivi</span>
+        </div>
+    </div>
+
+    <!-- Tile mood tracker -->
+    <div class="tile-row">
+    <div class="tile tile-large mood">
+        <img src="assets/img/area-benessere/smile.png" alt="smile icon" class="tile-icon" />
+        <span>Mood Tracker</span>
+    </div>
+    </div>
+
+    <!-- Sezione note -->
+    <div class="note-section">
+        <p><strong>Note (Opzionale)</strong></p>
+        <textarea placeholder="Puoi parlarci di te e di cosa provi..."></textarea>
+    </div>
+
+
+
+</ion-content>
+
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

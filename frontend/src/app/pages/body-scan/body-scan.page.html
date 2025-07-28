@@ -1,0 +1,43 @@
+<ion-header>
+    <ion-toolbar class="top-header">
+        <ion-buttons slot="start">
+            <ion-back-button defaultHref="/area-benessere"></ion-back-button>
+        </ion-buttons>
+        <ion-title>Body Scan</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+    <!-- Immagine -->
+    <img src="assets/img/area-benessere/body-scan.png" alt="Body Scan" class="meditation-image" />
+
+    <!-- Barra di avanzamento -->
+    <ion-range min="0" max="910" value="234" color="primary"></ion-range>
+    <div class="time-indicator">
+        <span>3:54</span>
+        <span>15:10</span>
+    </div>
+
+    <!-- Controlli audio -->
+    <div class="audio-controls">
+        <ion-icon name="play-skip-back-outline"></ion-icon>
+        <ion-icon name="play-circle" class="play-btn"></ion-icon>
+        <ion-icon name="play-skip-forward-outline"></ion-icon>
+    </div>
+
+    <!-- Sezione benefici -->
+    <ion-card>
+        <ion-card-header>
+            <ion-card-title>Benefici</ion-card-title>
+        </ion-card-header>
+        <ion-card-content>
+            <div class="benefit-box">
+                Focalizzati gradualmente su parti diverse del tuo corpo per rilasciare tensioni e promuovere il rilassamento.
+            </div>
+        </ion-card-content>
+    </ion-card>
+</ion-content>
+
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

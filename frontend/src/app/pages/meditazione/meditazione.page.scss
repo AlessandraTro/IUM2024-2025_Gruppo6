@@ -1,0 +1,183 @@
+/* Impostare l'immagine di sfondo per ion-content */
+ion-content {
+  background: url('/assets/SfondoAreaBenessere.png') no-repeat center center fixed; /* Assicurati che il percorso sia corretto */
+  background-size: cover; /* Fa sì che l'immagine copra tutta la pagina */
+  height: 100%; /* Assicurati che l'altezza sia al 100% */
+  width: 100%; /* Assicurati che la larghezza sia al 100% */
+  position: relative; /* Necessario per la sovrapposizione */
+}
+
+/* Sovrapposizione leggera per migliorare la leggibilità del testo */
+ion-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3); /* Sovrapposizione semi-trasparente */
+  z-index: -1; /* Posiziona l'overlay dietro il contenuto */
+}
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+  --color: #1c1c1c;
+}
+
+
+
+
+/* Definizione dei colori locali per la pagina Meditazione */
+:host {
+  --primary-color: #442f70;  /* Colore principale */
+  --secondary-color: #e6e6e6; /* Colore di sfondo delle sezioni attive */
+  --accent-color: #d199ea;  /* Colore per le azioni principali (icona play, etc.) */
+  --card-background: #f6e5d8;  /* Colore di sfondo per le card */
+  --shadow-color: rgba(0, 0, 0, 0.1); /* Ombra leggera per le card */
+  --chip-background: #f3f3f3; /* Colore di background per i chip */
+  --text-primary: #4a4a4a;  /* Colore del testo principale */
+  --text-secondary: #7b7b7b; /* Colore del testo secondario */
+  --footer-background: #ffffff; /* Colore di sfondo footer */
+  --card-border-radius: 12px; /* Bordo arrotondato per le card */
+  --chip-border-radius: 20px; /* Bordo arrotondato per i chip */
+  --play-icon-color: #000000; /* Colore per l'icona play */
+}
+
+/* Barra di ricerca */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+/* Barra di ricerca bianca */
+ion-searchbar {
+  --background: #fff; /* Sfondo bianco */
+  --color: #333; /* Colore del testo scuro */
+  --placeholder-color: #aaa; /* Colore del placeholder */
+  --border-radius: 25px; /* Bordo arrotondato */
+  --padding-start: 12px; /* Padding per migliorare l'allineamento del testo */
+  --padding-end: 12px; /* Padding per migliorare l'allineamento del testo */
+  --border: 1px solid #ccc; /* Aggiungi il bordo chiaro */
+}
+
+/* Aggiungi un'ombra leggera alla barra di ricerca */
+ion-searchbar::part(input) {
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+/* Segmenti di filtro */
+ion-segment {
+  margin-top: 10px;
+  --border-color: #ccc;
+  --background-activated: var(--accent-color);
+}
+
+ion-segment-button {
+  --color: var(--primary-color);
+  --border-radius: 10px;
+  --background-activated: var(--accent-color);
+}
+
+/* Card principale (Body Scan) */
+.meditation-card {
+  margin-top: 16px;
+  --background: var(--card-background);
+  --box-shadow: 0 2px 8px var(--shadow-color);
+  --border-radius: var(--card-border-radius);
+}
+
+.meditation-card .chip-group {
+  margin-bottom: 8px;
+}
+
+.meditation-card .card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.meditation-card .card-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.meditation-card .play-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: var(--play-icon-color);
+  font-size: 32px;
+}
+
+/* Sezione per te */
+.section-title {
+  font-size: 1.4rem;
+  margin-top: 24px;
+  color: var(--text-primary);
+}
+
+.flat-card {
+  margin-top: 16px;
+  --background: var(--card-background);
+  --box-shadow: 0 2px 8px var(--shadow-color);
+  --border-radius: var(--card-border-radius);
+}
+
+.flat-card h3 {
+  color: var(--text-primary);
+}
+
+.flat-card p {
+  color: var(--text-secondary);
+}
+
+/* Footer Tab Bar */
+ion-tab-bar {
+  --background: var(--footer-background);
+  --color: var(--primary-color); /* Colore delle icone nella tab bar */
+  --border-top: 1px solid #ddd;
+}
+
+ion-tab-button {
+  --color-selected: var(--primary-color);
+}
+
+ion-tab-button ion-label {
+  font-size: 12px;
+}
+/* Chip group per le etichette 15 Mins, Beginner, Focus */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+ion-chip {
+  background: #f1c6b0; /* Rosa carne di default */
+  --color: #4a4a4a; /* Colore del testo nei chip */
+  --border-radius: 20px; /* Bordo arrotondato per i chip */
+}
+
+/* Modifica il colore dei chip in arancione */
+ion-chip[color="orange"] {
+  --background: #fb7707; /* Colore arancione chiaro */
+  --color: #fff; /* Colore del testo bianco */
+  --border-radius: 20px;
+}
+
+/* Titoli h2 */
+h2 {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+/* Cambia la sottolineatura del segmento attivo in viola */
+ion-segment-button[aria-selected="true"] {
+  --background-activated: var(--primary-color); /* Colore di attivazione (viola) */
+  --color: #fff; /* Colore del testo attivo */
+  border-bottom: 2px solid var(--primary-color); /* Bordo inferiore viola */
+}
+
