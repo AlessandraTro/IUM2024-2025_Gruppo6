@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import {Injectable} from '@angular/core';
+import {HttpClient} from '@angular/common/http';
+import {Observable} from 'rxjs';
 
 @Injectable({
     providedIn: 'root',
@@ -8,13 +8,14 @@ import { Observable } from 'rxjs';
 export class UtenteService {
     private apiUrl = 'api/utenti';
     private storageKey = 'utenti';
-    constructor(private http: HttpClient) {}
+
+    constructor(private http: HttpClient) {
+    }
 
     login(email: string, password: string): Observable<any | null> {
         return new Observable(observer => {
             const utenti = JSON.parse(localStorage.getItem('utenti') || '[]');
 
-            // Cerca utente con email (case insensitive) e password esatta
             const utente = utenti.find((u: any) =>
                 u.email.toLowerCase() === email.toLowerCase() && u.password === password
             );
@@ -44,10 +45,11 @@ export class UtenteService {
             console.log('Sara inserita nel localStorage');
         }
     }
+
     updateUser(updatedUser: any): void {
         let utenti = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
         utenti = utenti.map((u: any) =>
-            u.email.toLowerCase() === updatedUser.email.toLowerCase() ? { ...u, ...updatedUser } : u
+            u.email.toLowerCase() === updatedUser.email.toLowerCase() ? {...u, ...updatedUser} : u
         );
         localStorage.setItem(this.storageKey, JSON.stringify(utenti));
     }

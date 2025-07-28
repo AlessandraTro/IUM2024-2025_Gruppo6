@@ -1,17 +1,16 @@
-
 <ion-content class="settings-page">
-    <div class="background-image"> </div>
-        <div class="profile-card">
-            <ion-avatar class="big-avatar">
-                <img [src]="user.photo" alt="Avatar" />
-            </ion-avatar>
-            <h2>Ciao {{ user.name || 'Nome utente' }}!</h2>
-            <p>
-                Qui puoi ritrovare te stessa, tracciare il tuo percorso e segnalare le tue preferenze.
-                Che sia una pausa di pochi minuti o un momento tutto tuo, siamo felici che tu sia qui.
-                Ogni passo conta e il tuo inizia proprio adesso.
-            </p>
-        </div>
+    <div class="background-image"></div>
+    <div class="profile-card">
+        <ion-avatar class="big-avatar">
+            <img [src]="user.photo" alt="Avatar"/>
+        </ion-avatar>
+        <h2>Ciao {{ user.name || 'Nome utente' }}!</h2>
+        <p>
+            Qui puoi ritrovare te stessa, tracciare il tuo percorso e segnalare le tue preferenze.
+            Che sia una pausa di pochi minuti o un momento tutto tuo, siamo felici che tu sia qui.
+            Ogni passo conta e il tuo inizia proprio adesso.
+        </p>
+    </div>
 
     <!-- Lista Opzioni -->
     <ion-list class="settings-list">

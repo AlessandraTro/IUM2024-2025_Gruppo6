@@ -9,28 +9,26 @@ ion-content {
   --background: url('/assets/SfondoImpostazioni.png') no-repeat center center / cover;
 }
 
-/* Contenitore foto profilo */
 .profile-picture-container {
   position: relative;
   width: 155px;
   height: 155px;
   margin: 10px auto 20px auto;
   cursor: pointer;
-  background-size: cover;      /* fa il "crop" proporzionale */
-  background-position: center; /* centra l’immagine */
+  background-size: cover;
+  background-position: center;
   background-repeat: no-repeat;
 }
 
 .profile-picture {
-  width: 155px;          /* stessa larghezza contenitore */
-  height: 155px;         /* stessa altezza contenitore */
-  border-radius: 50%;    /* cerchio */
-  object-fit: cover;     /* taglia senza deformare */
+  width: 155px;
+  height: 155px;
+  border-radius: 50%;
+  object-fit: cover;
   border: 2px solid #2e2b6b;
   display: block;
 }
 
-/* Icona fotocamera */
 .change-photo-icon {
   position: absolute;
   bottom: 4px;
@@ -42,9 +40,6 @@ ion-content {
   padding: 6px;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
-
-/* Item dei campi */
-
 
 .info-section {
   margin-top: 6px;
@@ -85,7 +80,7 @@ ion-content {
     --background: transparent;
     --ion-background-color: transparent;
     --ion-item-background: transparent;
-    color: #000; /* testo visibile */
+    color: #000;
   }
 
   ion-datetime::part(calendar),
@@ -93,7 +88,6 @@ ion-content {
   ion-datetime::part(title) {
     background: transparent;
   }
-
 
   ion-button {
     margin-top: 20px;
@@ -103,9 +97,7 @@ ion-content {
     font-weight: bold;
     font-size: 1rem;
     color: #fff;
-    margin-left:60px;
+    margin-left: 60px;
     margin-right: 60px;
   }
 }
-
-

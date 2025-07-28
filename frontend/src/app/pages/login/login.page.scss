@@ -6,6 +6,7 @@
   top: 0;
   left: 0;
 }
+
 * {
   font-family: 'Times New Roman', Times, serif;
 }
@@ -54,9 +55,7 @@ ion-item.input-item {
   position: relative;
 }
 
-
-
-.ion-label{
+.ion-label {
   margin-bottom: 2px;
 }
 
@@ -72,7 +71,7 @@ ion-button.login-button {
   --border-radius: 30px;
   font-size: 18px;
   margin-top: 30px;
-  color:white;
+  color: white;
 }
 
 .password-icon {
@@ -85,7 +84,6 @@ ion-button.login-button {
   cursor: pointer;
   z-index: 10;
 }
-
 
 .signup-link {
   margin-top: 20px;

@@ -1,41 +1,41 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule, NgOptimizedImage} from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 import {Router, RouterLink} from '@angular/router';
-
 
 
 import {
     IonButton,
     IonContent,
-    IonHeader,
     IonIcon,
-    IonInput, IonItem, IonLabel,
-    IonList, IonRouterLinkWithHref,
-    IonTitle,
-    IonToolbar, ToastController
+    ToastController
 } from '@ionic/angular/standalone';
 import {AuthService} from "../../Service/auth.service";
 
 @Component({
-  selector: 'app-registrazione',
-  templateUrl: './registrazione.page.html',
-  styleUrls: ['./registrazione.page.scss'],
-  standalone: true,
+    selector: 'app-registrazione',
+    templateUrl: './registrazione.page.html',
+    styleUrls: ['./registrazione.page.scss'],
+    standalone: true,
     imports: [IonContent, CommonModule, FormsModule, IonButton, IonIcon, RouterLink]
 })
 export class RegistrazionePage implements OnInit {
 
-    showPassword = false; // stato per l'occhio
+    showPassword = false;
     name: string = '';
     email: string = '';
     password: string = '';
-    constructor(private authService: AuthService, private router: Router, private toastController: ToastController) {}
-    ngOnInit() {}
+
+    constructor(private authService: AuthService, private router: Router, private toastController: ToastController) {
+    }
+
+    ngOnInit() {
+    }
 
     togglePassword(): void {
         this.showPassword = !this.showPassword;
     }
+
     async onRegister(): Promise<void> {
         if (this.name && this.email && this.password) {
             this.authService.registerUser(this.name, this.email, this.password).subscribe({
@@ -67,12 +67,10 @@ export class RegistrazionePage implements OnInit {
     }
 
     redirectToApple(): void {
-        // Reindirizza alla pagina ufficiale Apple ID login
         window.location.href = 'https://appleid.apple.com/auth/authorize';
     }
 
     redirectToGoogle(): void {
-        // Reindirizza alla pagina ufficiale di Google OAuth (demo scope)
         window.location.href = 'https://accounts.google.com/o/oauth2/v2/auth';
     }
 

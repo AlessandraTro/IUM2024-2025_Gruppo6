@@ -11,7 +11,7 @@ h3 {
 .settings-card {
   background: #fff;
   border-radius: 12px;
-  overflow: hidden; /* ✅ Arrotonda bene i bordi */
+  overflow: hidden;
   margin-bottom: 20px;
 
   ion-item {
@@ -27,8 +27,8 @@ h3 {
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
     transition: background 0.3s ease;
     display: flex;
-    align-items: center; /* ✅ centra verticalmente testo e toggle */
-    justify-content: space-between; /* ✅ spinge il toggle a destra */
+    align-items: center;
+    justify-content: space-between;
     font-size: 19px;
 
     ion-label {

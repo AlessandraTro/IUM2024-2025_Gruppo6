@@ -13,8 +13,8 @@
   }
 
   ion-back-button {
-    --color: #000000; /* ✅ freccia nera */
-    --icon-font-size: 20px; /* ✅ grandezza simile alla foto */
+    --color: #000000;
+    --icon-font-size: 20px;
     text-transform: none;
     margin-left: 6px;
   }
@@ -22,8 +22,8 @@
   .header-texts {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* ✅ allineato tutto a sinistra */
-    margin-left: 18px; /* spazio tra freccia e testo */
+    align-items: flex-start;
+    margin-left: 18px;
     margin-top: 2px;
 
     .main-title {

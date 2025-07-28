@@ -1,5 +1,4 @@
 .custom-content {
-  /* ✅ Metodo sicuro per far vedere lo sfondo */
   position: relative;
   background: transparent;
   --background: transparent;
@@ -14,7 +13,7 @@
     background: url('/assets/SfondoImpostazioni.png') no-repeat center center;
     background-size: cover;
     background-attachment: fixed;
-    z-index: -1; /* Manda l’immagine sotto tutto */
+    z-index: -1;
   }
 
   ion-list {
@@ -41,22 +40,18 @@
       color: #333;
     }
 
-    /* ✅ Azzurrino per lingua attiva */
     &.selected {
       --background: #e8f0ff;
     }
 
-    /* ✅ Stile cerchi */
     ion-icon {
       font-size: 22px;
     }
 
-    /* Cerchi non selezionati */
     ion-icon.unselected {
       color: #ffb3b3;
     }
 
-    /* Cerchio selezionato (azzurro con spunta bianca centrata) */
     ion-icon.selected {
       color: #3880ff;
     }
