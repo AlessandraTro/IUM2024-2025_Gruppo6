@@ -1,0 +1,32 @@
+<ion-content class="modal-bg">
+    <div class="custom-header">
+        <div class="btn-back" (click)="goBack()">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </div>
+
+        <div class="header-title">
+            Esercizio di Respirazione
+        </div>
+
+        <div class="btn-icon">
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </div>
+    </div>
+
+    <div class="circle-animation">
+        <img src="assets/respira.png" alt="Respiro" />
+    </div>
+
+    <div class="timer">{{ formatTime() }}</div>
+
+
+    <div class="button-group">
+        <button class="modal-btn" (click)="resetTimer()">Reset</button>
+        <button class="modal-btn" (click)="togglePause()">{{ paused ? 'Riprendi' : 'Pausa' }}</button>
+    </div>
+
+    <div class="button-cust" *ngIf="timeLeft === 0">
+        <button class="modal-btn full" (click)="endExercise()">Fatto</button>
+    </div>
+
+</ion-content>

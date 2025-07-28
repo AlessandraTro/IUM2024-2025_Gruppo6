@@ -1,3 +1,7 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
 .custom-header {
   background: #f2ddd0;
   height: 56px;
@@ -9,88 +13,21 @@
   border-bottom: 1px solid #ddd;
 }
 
-.intro-container{
+/* INTRO & BACKGROUND */
+.intro-container,
+.background-decor {
   background: url('/assets/SfondoChat.png') no-repeat center center;
   background-size: cover;
-  width: 100%;
-  height: 100%;
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.left-section {
-  display: flex;
-  align-items: center;
-  gap: 4px;
-  flex: 1;
-}
-
-.center-section {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-align: center;
-  pointer-events: none;
-}
-
-.right-section {
-  display: flex;
-  align-items: center;
-  margin-right: 15px;
-}
-
-.serenity-logo {
-  height: 45px;
-  margin-left: 20px;
-}
-
-.serenity-label {
-  font-size: 16px;
-  color: #999;
-  font-weight: 500;
-}
-
-.serenity-title {
-  font-size: 18px;
-  font-weight: 600;
-  color: black;
-}
-
-.chat-icon-container {
-  width: 36px;
-  height: 36px;
-  background: white;
-  border-radius: 50%;
-  border: 2px solid black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.chat-icon {
-  font-size: 20px;
-  color: black;
-}
-
-.back-icon {
-  font-size: 22px;
-  color: black;
-}
-
-.chat-content {
-  --background: #f9f9f9;
-  position: relative;
+  width: 100%;
+  height: 100%;
 }
 
 .background-decor {
-  position: absolute;
-  top: 0;
-  left: 0;
   right: 0;
   bottom: 0;
-  background: url('/assets/SfondoChat.png') no-repeat center center;
-  background-size: cover;
   z-index: 1;
 }
 
@@ -112,101 +49,91 @@
   line-height: 1.6;
 }
 
-.footer-wrapper {
-  --background: transparent;
-  padding: 8px 12px;
-}
-
+/* SECTION STRUCTURE */
+.left-section,
+.right-section,
+.pill-left,
 .message-bar {
   display: flex;
   align-items: center;
-  background: white;
-  border-radius: 999px;
-  padding: 4px 12px;
-  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
 }
 
-.chat-input {
-  flex: 1;
-  font-size: 16px;
-  padding: 8px;
-  --background: transparent;
-  --padding-start: 10px;
-  --padding-end: 10px;
-  --placeholder-color: #999;
-  color: #000;
-  border-radius: 999px;
-}
-
-.btn-icon {
-  min-width: 36px;
-  height: 36px;
-  --color: #444;
-}
-.footer-wrapper {
-  --background: transparent;
-  padding: 0 10px 8px;
-}
-
-.chat-bottom-bar {
-  display: flex;
-}
-
-.chat-pill {
-  display: flex;
-  align-items: center;
-  background: white;
-  border-radius: 999px;
-  padding: 6px 10px;
-  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
-}
-
-.pill-left {
-  display: flex;
-  align-items: center;
+.left-section {
   gap: 4px;
-  margin-right: 6px;
-}
-
-.chat-textbox {
-  border: none;
-  outline: none;
   flex: 1;
-  font-size: 16px;
-  padding: 6px;
-  background: transparent;
-  color: #000;
 }
 
-.chat-icons {
+.right-section {
+  margin-right: 15px;
+}
+
+.center-section {
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* LOGO & LABELS */
+.serenity-logo {
+  height: 45px;
+  margin-left: 20px;
+}
+
+.serenity-label {
+  font-size: 16px;
+  color: #999;
+  font-weight: 500;
+}
+
+.serenity-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: black;
+}
+
+/* ICONS */
+.chat-icon-container {
+  width: 36px;
+  height: 36px;
+  background: white;
+  border-radius: 50%;
+  border: 2px solid black;
   display: flex;
-  justify-content: flex-end;
-  gap: 8px;
-  margin-top: 2px;
-  padding-left: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-icon,
+.back-icon,
+.icon-btn {
+  font-size: 20px;
+  color: black;
+}
+
+.back-icon {
+  font-size: 22px;
 }
 
 .icon-btn {
   background: none;
   border: none;
   padding: 2px;
-  font-size: 20px;
   color: #333;
 }
 
-.iphone-bar {
-  width: 130px;
-  height: 5px;
-  background: #1b1b1b;
-  border-radius: 999px;
-  margin: 6px auto 0;
+/* CHAT AREA */
+.chat-content {
+  --background: #f9f9f9;
+  position: relative;
 }
 
 .chat-area {
   position: relative;
   z-index: 2;
   padding: 1rem;
-  padding-bottom: 80px; // spazio per la barra in basso
+  padding-bottom: 80px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -232,4 +159,84 @@
   background-color: #fff;
   border: 1px solid #ddd;
   color: #333;
+}
+
+/* FOOTER */
+.footer-wrapper {
+  --background: transparent;
+  padding: 4px 8px;
+}
+
+.message-bar {
+  background: white;
+  border-radius: 999px;
+  padding: 4px 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.chat-input,
+.chat-textbox {
+  font-size: 16px;
+  background: transparent;
+  color: #000;
+  border-radius: 999px;
+  flex: 1;
+}
+
+.chat-input {
+  padding: 8px;
+  --background: transparent;
+  --padding-start: 10px;
+  --padding-end: 10px;
+  --placeholder-color: #999;
+}
+
+.chat-textbox {
+  border: none;
+  outline: none;
+  padding: 6px;
+}
+
+/* BOTTOM ELEMENTS */
+.chat-bottom-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-pill {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.pill-left {
+  gap: 4px;
+  margin-right: 6px;
+}
+
+.chat-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 2px;
+  padding-left: 8px;
+}
+
+/* IPHONE BAR */
+.iphone-bar {
+  width: 130px;
+  height: 5px;
+  background: #1b1b1b;
+  border-radius: 999px;
+  margin: 6px auto 0;
+}
+
+/* BUTTON ICON */
+.btn-icon {
+  min-width: 36px;
+  height: 36px;
+  --color: #444;
 }

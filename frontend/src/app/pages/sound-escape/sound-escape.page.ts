@@ -1,9 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CommonModule, Location} from '@angular/common';
-import { FormsModule } from '@angular/forms';
+import {FormsModule} from '@angular/forms';
 
 import {
-    IonBackButton, IonButton,
     IonButtons,
     IonContent, IonFooter,
     IonHeader,
@@ -16,22 +15,25 @@ import {TrackCardComponent} from "../../component/track-card/track-card.componen
 import {Router} from "@angular/router";
 
 @Component({
-  selector: 'app-sound-escape',
-  templateUrl: './sound-escape.page.html',
-  styleUrls: ['./sound-escape.page.scss'],
-  standalone: true,
+    selector: 'app-sound-escape',
+    templateUrl: './sound-escape.page.html',
+    styleUrls: ['./sound-escape.page.scss'],
+    standalone: true,
     imports: [IonContent, IonHeader, IonTitle, IonToolbar, CommonModule, FormsModule, FooterComponent, IonButtons, IonIcon, TrackCardComponent, IonFooter]
 })
 export class SoundEscapePage implements OnInit {
 
-    constructor(private router: Router, private location: Location) {}
+    constructor(private router: Router, private location: Location) {
+    }
+
     openPage(key: string) {
         this.router.navigate(['/sound', key]);
     }
-  ngOnInit() {
-  }
+
+    ngOnInit() {
+    }
 
     goBack() {
-        this.location.back();
+        this.router.navigate(['/home-benvenuto']); //Da mettere area benessere
     }
 }

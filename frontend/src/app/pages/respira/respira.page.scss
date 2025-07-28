@@ -1,0 +1,104 @@
+.custom-bg {
+  --background: #f4e2d8;
+  background-color: #f4e2d8;
+  padding: 20px;
+}
+
+.page-title {
+  font-weight: bold;
+  font-size: 18px;
+  background: #f4e2d8;
+}
+
+/* ICONA CENTRALE */
+.breathing-icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 40px 0;
+}
+
+.breathing-icon-container .nose-icon {
+  width: 200px;
+  height: auto;
+}
+
+/* FORM */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-label {
+  display: block;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 5px;
+  color: #3d3d3d;
+}
+
+.select-wrapper {
+  position: relative;
+  width: 80%;
+}
+
+.form-select {
+  width: 100%;
+  padding: 12px 40px 12px 12px;
+  font-size: 16px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  background-color: white;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+}
+
+.form-select:focus {
+  outline: none;
+  border: 1px solid #a88f7a;
+  box-shadow: 0 0 0 2px rgba(196, 169, 152, 0.2);
+}
+
+.icon-right {
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px;
+  height: 16px;
+  pointer-events: none;
+}
+
+/* BOTTONE */
+.start-button {
+  width: 90%;
+  padding: 14px;
+  font-size: 16px;
+  font-weight: bold;
+  background-color: #c4a998;
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+
+.bottone-cust {
+  display: flex;
+  justify-content: center;
+}
+
+/* HEADER */
+.custom-header {
+  margin-top: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.header-title {
+  font-weight: bold;
+}

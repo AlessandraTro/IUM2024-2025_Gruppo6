@@ -1,0 +1,221 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* HEADER E INTRO */
+.diario-header {
+  --background: #f7e2d2;
+  --color: #000;
+}
+
+.diario-intro {
+  margin: 10px 0 20px;
+}
+
+.intro-domanda {
+  font-style: italic;
+  font-size: 16px;
+  margin-bottom: 4px;
+  font-weight: bold;
+}
+
+.intro-testo {
+  font-size: 15px;
+  color: #333;
+}
+
+/* SEZIONE CALENDARIO */
+.mese {
+  margin-bottom: 10px;
+}
+
+.mese-testo {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.mese-switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  font-size: 18px;
+  font-weight: bold;
+  margin: 10px 0 16px;
+}
+
+.mese-switcher ion-icon {
+  font-size: 20px;
+  cursor: pointer;
+  color: #333;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 10px;
+  margin: 10px 0 20px;
+  justify-items: center;
+  font-size: 14px;
+}
+
+.calendar-day {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #000;
+}
+
+.calendar-day.label {
+  font-weight: bold;
+  font-size: 12px;
+  color: #666;
+}
+
+.calendar-day.selected {
+  background-color: #4f00ff;
+  color: #fff;
+  border-radius: 50%;
+}
+
+.calendar-day.empty {
+  visibility: hidden;
+}
+
+/* ANNOTAZIONI */
+.divider {
+  height: 2px;
+  background: #e1e1e1;
+  margin: 16px 0;
+}
+
+.annotazioni-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 6px;
+}
+
+.annotazioni-data {
+  font-size: 15px;
+  margin-bottom: 10px;
+  color: #444;
+}
+
+.annotazione-box {
+  background-color: #ede5f8;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  white-space: pre-line;
+}
+
+/* MODALE */
+.custom-modal {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.custom-modal-content {
+  background: white;
+  width: 100%;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal-header-icons {
+  display: flex;
+  justify-content: space-between;
+  font-size: 20px;
+  color: black;
+  margin-bottom: 8px;
+}
+
+.modal-header-icons i {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-size: 24px;
+  cursor: default;
+}
+
+.modal-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 12px 0;
+}
+
+.modal-preview-box {
+  background-color: #f2f2f2;
+  border-radius: 14px;
+  padding: 12px;
+  margin-bottom: 16px;
+}
+
+.modal-date {
+  font-size: 14px;
+  font-weight: bold;
+  margin-bottom: 2px;
+}
+
+.modal-day {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+.modal-preview-text,
+.modal-textarea,
+.annotazione-box {
+  font-size: 15px;
+  color: #222;
+  white-space: pre-line;
+}
+
+.modal-textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 12px;
+  resize: none;
+  margin-bottom: 20px;
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  color: #444;
+}
+
+.add-btn {
+  background-color: #4f00ff;
+  border: none;
+  color: white;
+  padding: 8px 22px;
+  font-size: 15px;
+  border-radius: 14px;
+}
+
+/* MESSAGGIO DI SUCCESSO */
+.success-message {
+  background-color: #d1f8d7;
+  color: #1a662f;
+  padding: 10px 16px;
+  margin: 10px 0;
+  border-radius: 12px;
+  font-size: 15px;
+  text-align: center;
+}

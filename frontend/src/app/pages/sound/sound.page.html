@@ -1,6 +1,5 @@
 <ion-content *ngIf="data" [fullscreen]="true" class="ion-padding">
 
-    <!-- HEADER COMPLETO -->
     <div class="header-image" [style.backgroundImage]="'url(' + data.image + ')'">
 
         <!-- Pulsanti -->
@@ -25,7 +24,7 @@
     <!-- Search bar -->
     <div class="search-bar">
         <ion-icon name="search-outline"></ion-icon>
-        <input type="text" placeholder="Cosa vuoi ascoltare?" />
+        <input type="text" placeholder="Cosa vuoi ascoltare?"/>
         <ion-icon name="options-outline"></ion-icon>
     </div>
 
@@ -38,7 +37,11 @@
         </div>
 
         <div class="cards-grid">
-            <div class="session-card" *ngFor="let card of section.items">
+            <div
+                    class="session-card"
+                    *ngFor="let card of section.items"
+                    (click)="openPlayer(card)"
+            >
                 <div class="card-image" [style.backgroundImage]="'url(' + card.image + ')'">
                     <div class="card-overlay">
                         <h4>{{ card.title }}</h4>
@@ -54,7 +57,8 @@
             </div>
         </div>
     </div>
-
-
 </ion-content>
 
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

@@ -1,3 +1,8 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* SEZIONE CONTENUTI */
 .contenuti-content {
   --background: #fff5ed;
   padding: 16px;
@@ -11,12 +16,19 @@
   justify-content: center;
 }
 
+/* BOX GENERICO */
 .box {
   border-radius: 20px;
   padding: 16px;
   height: 100%;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+}
+
+.orizzontale {
+  flex-direction: row;
+  align-items: center;
   justify-content: space-between;
 }
 
@@ -29,16 +41,11 @@
   color: black;
 }
 
-.orizzontale {
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .consigliato {
   background: #fff9c4;
 }
 
+/* TESTI */
 .titolo {
   font-weight: bold;
   font-size: 15px;
@@ -55,103 +62,14 @@
   margin-top: 4px;
 }
 
+/* RECOMMENDED */
 .recommended-title {
   font-size: 18px;
   font-weight: bold;
-  margin-top: 20px;
-  margin-bottom: 10px;
+  margin: 20px 0 10px;
   color: black;
   display: flex;
   justify-content: center;
-}
-
-.card-container {
-  display: flex;
-  justify-content: space-between;
-  gap: 12px;
-  margin-bottom: 20px;
-}
-
-.custom-card {
-  background-color: #FFC97E;
-  border-radius: 20px;
-  padding: 16px;
-  width: 48%;
-  position: relative;
-  overflow: hidden;
-  min-height: 120px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.card-text {
-  padding-right: 25px;
-  z-index: 2;
-  margin-top: 15px;
-  color:black;
-}
-
-.card-img {
-  position: absolute;
-  top: 9px;
-  right: 0px;
-  height: 64px;
-  max-width: 50%;
-  object-fit: contain;
-  pointer-events: none;
-}
-
-.card-img2{
-  position: absolute;
-  top: 9px;
-  right: -37px;
-  height: 64px;
-  object-fit: contain;
-  pointer-events: none;
-}
-
-.horizontal-card {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  border-radius: 20px;
-  padding: 16px;
-  margin-bottom: 12px;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  min-height: 100px;
-  color: black;
-}
-
-.play-icon {
-  height: 32px;
-  width: 32px;
-  flex-shrink: 0;
-}
-
-.horizontal-card .card-text {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
-  font-size: 14px;
-}
-
-.horizontal-card .titolo {
-  font-weight: bold;
-  font-size: 15px;
-}
-
-.horizontal-card .sottotesto {
-  font-size: 13px;
-  color: #333;
-}
-
-.horizontal-card .meditation-info {
-  margin-top: 4px;
-  font-size: 11px;
-  font-weight: bold;
 }
 
 .recommended-grid {
@@ -169,6 +87,11 @@
   overflow: hidden;
   background: #fff;
   box-shadow: none;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 1;
 }
 
 .recommended-img {
@@ -186,24 +109,107 @@
 }
 
 .recommended-text .titolo {
-  font-weight: bold;
-  font-size: 15px;
   color: #222;
 }
 
 .recommended-text .sottotesto {
-  font-size: 13px;
   color: #999;
 }
 
-.newss{
-  padding-bottom: 20px;
+/* CARD GENERICHE */
+.custom-card,
+.horizontal-card {
+  border-radius: 20px;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 1;
 }
 
+.custom-card {
+  background-color: #FFC97E;
+  width: 48%;
+  min-height: 120px;
+}
+
+.custom-card * {
+  pointer-events: none;
+}
+
+.card-text {
+  padding-right: 25px;
+  z-index: 2;
+  margin-top: 15px;
+  color: black;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.card-img,
+.card-img2 {
+  position: absolute;
+  top: 9px;
+  height: 64px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.card-img {
+  right: 0;
+  max-width: 50%;
+}
+
+.card-img2 {
+  right: -37px;
+}
+
+.horizontal-card {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100px;
+  color: black;
+}
+
+.horizontal-card .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.horizontal-card .sottotesto {
+  color: #333;
+}
+
+.horizontal-card .meditation-info {
+  margin-top: 4px;
+}
+
+/* ICONA PLAY */
+.play-icon {
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+/* HEADER CUSTOM */
 .custom-header {
-  --background: #f5e4d9; // colore beige chiaro
-  padding-left: 12px;
-  padding-right: 12px;
+  --background: #f5e4d9;
+  padding: 0 12px;
 }
 
 .custom-back-title {
@@ -242,26 +248,16 @@
   pointer-events: none;
 }
 
-/* Rimuove la sottolineatura dei link */
+/* LINK */
 a {
   text-decoration: none;
 }
 
-/* Eventuale aggiunta per rimuovere la sottolineatura solo se è applicata da altri stili */
 a:hover {
   text-decoration: none;
 }
 
-.custom-card,
-.horizontal-card,
-.recommended-card {
-  cursor: pointer;
-  user-select: none;
-  pointer-events: auto;
-  z-index: 1;
-  position: relative;
-}
-
-.custom-card * {
-  pointer-events: none; // forza il click sul contenitore
+/* EXTRA */
+.newss {
+  padding-bottom: 20px;
 }

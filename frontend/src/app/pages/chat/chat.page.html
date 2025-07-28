@@ -2,7 +2,7 @@
     <div class="custom-header">
         <div class="left-section" [routerLink]="['/home-benvenuto']">
             <ion-icon name="arrow-back-outline" class="back-icon"></ion-icon>
-            <img src="assets/Logo_Black.png" alt="Serenity Logo" class="serenity-logo" />
+            <img src="assets/Logo_Black.png" alt="Serenity Logo" class="serenity-logo"/>
         </div>
         <div class="center-section">
             <span class="serenity-title">Serenity</span>
@@ -27,8 +27,8 @@
     <ng-template #introText>
         <div class="intro-text-container">
             <p class="intro-text">
-                Inizia una nuova conversazione<br />
-                con <strong>SERENITY</strong>, la tua AI<br />
+                Inizia una nuova conversazione<br/>
+                con <strong>SERENITY</strong>, la tua AI<br/>
                 personalizzata.
             </p>
         </div>
@@ -39,14 +39,18 @@
     <div class="chat-bottom-bar">
         <div class="chat-pill">
             <div class="pill-left">
-                <button class="icon-btn"><ion-icon name="add-outline"></ion-icon></button>
-                <button class="icon-btn"><ion-icon name="happy-outline"></ion-icon></button>
+                <button class="icon-btn">
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <button class="icon-btn">
+                    <ion-icon name="happy-outline"></ion-icon>
+                </button>
             </div>
             <input type="text"
                    [(ngModel)]="message"
                    placeholder="Type  a message"
                    class="chat-textbox"
-                   (keyup.enter)="sendMessage()" />
+                   (keyup.enter)="sendMessage()"/>
 
             <button class="icon-btn" (click)="sendMessage()">
                 <ion-icon name="send-outline"></ion-icon>
@@ -54,9 +58,12 @@
 
         </div>
         <div class="chat-icons">
-            <button class="icon-btn"><ion-icon name="mic-outline"></ion-icon></button>
-            <button class="icon-btn"><ion-icon name="camera-outline"></ion-icon></button>
+            <button class="icon-btn">
+                <ion-icon name="mic-outline"></ion-icon>
+            </button>
+            <button class="icon-btn">
+                <ion-icon name="camera-outline"></ion-icon>
+            </button>
         </div>
     </div>
-    <div class="iphone-bar"></div>
 </ion-footer>

@@ -1,0 +1,48 @@
+<ion-content class="custom-bg" [fullscreen]="true">
+    <div class="custom-header">
+        <div class="btn-back" (click)="goBack()">
+            <ion-icon name="chevron-back-outline"></ion-icon>
+        </div>
+
+        <div class="header-title">
+            Esercizio di Respirazione
+        </div>
+
+        <div class="btn-icon">
+            <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </div>
+    </div>
+    <div class="breathing-icon-container">
+        <img src="assets/respira.png" alt="Respiro" class="nose-icon"/>
+    </div>
+
+    <!-- Tecnica -->
+    <div class="form-group">
+        <label class="form-label">Tecnica</label>
+        <div class="select-wrapper">
+            <select [(ngModel)]="technique" class="form-select">
+                <option value="4-7-8">4–7–8 Respira</option>
+                <option value="box">Box Breathing</option>
+                <option value="pranayama">Pranayama</option>
+            </select>
+            <ion-icon name="chevron-forward-outline" class="icon-right"></ion-icon>
+        </div>
+    </div>
+
+    <!-- Durata -->
+    <div class="form-group">
+        <label class="form-label">Durata sessione</label>
+        <div class="select-wrapper">
+            <select [(ngModel)]="duration" class="form-select">
+                <option value="5">5 Minuti</option>
+                <option value="10">10 Minuti</option>
+                <option value="15">15 Minuti</option>
+            </select>
+            <ion-icon name="chevron-down-outline" class="icon-right"></ion-icon>
+        </div>
+    </div>
+
+    <div class="bottone-cust">
+        <button class="start-button" (click)="startExercise()">Inizia Esercizio</button>
+    </div>
+</ion-content>
