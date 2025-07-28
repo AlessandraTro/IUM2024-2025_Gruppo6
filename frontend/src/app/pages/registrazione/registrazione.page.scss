@@ -2,6 +2,7 @@
   font-family: 'Times New Roman', Times, serif;
 }
 
+/* SOCIAL BUTTON */
 .social-button {
   --border-radius: 12px;
   --box-shadow: 0 1px 6px rgba(0, 0, 0, 0.1);
@@ -10,8 +11,21 @@
   justify-content: center;
   gap: 12px;
   font-weight: 500;
+  --background: #ffffff;
+  --color: #1e1e1e;
+  font-size: 16px;
+  height: 50px;
+  margin: 10px 0;
+  text-transform: none;
 }
 
+.social-icon {
+  width: 22px;
+  height: 22px;
+  margin-right: 14px;
+}
+
+/* BASE LAYOUT */
 .base {
   background: url('/assets/SfondoLogin.png') no-repeat center center;
   background-size: cover;
@@ -24,6 +38,7 @@
   padding: 20px;
 }
 
+/* LOGO CONTAINER */
 .logo-container {
   text-align: center;
   display: flex;
@@ -38,6 +53,7 @@
   display: block;
 }
 
+/* TITOLI E SOTTOTITOLI */
 .subtitle {
   color: white;
   font-weight: bold;
@@ -45,26 +61,7 @@
   margin: 10px 0 20px;
 }
 
-.social-button {
-  --background: #ffffff;
-  --color: #1e1e1e;
-  --border-radius: 16px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
-  font-weight: 500;
-  font-size: 16px;
-  height: 50px;
-  margin: 10px 0;
-  text-transform: none;
-}
-
-.social-icon {
-  width: 22px;
-  height: 22px;
-  margin-right: 14px;
-}
-
+/* DIVIDER */
 .divider {
   display: flex;
   align-items: center;
@@ -85,6 +82,7 @@
   color: #cccccc;
 }
 
+/* FLOATING INPUT */
 .floating-input {
   position: relative;
   margin: 12px 0;
@@ -119,6 +117,7 @@
   color: #48869A;
 }
 
+/* ICONA PASSWORD */
 .password-icon {
   position: absolute;
   right: 12px;
@@ -129,6 +128,7 @@
   cursor: pointer;
 }
 
+/* BUTTON */
 ion-button.create-account {
   --background: #48869A;
   --border-radius: 30px;
@@ -138,6 +138,7 @@ ion-button.create-account {
   color: white;
 }
 
+/* SIGNIN LINK */
 .signin-link {
   text-align: center;
   margin-top: 20px;

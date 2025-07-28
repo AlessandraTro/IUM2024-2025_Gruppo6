@@ -1,10 +1,23 @@
-/* Header beige */
-ion-toolbar.top-header {
-  --background: #f3e3d9;
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* HEADER */
+ion-toolbar.top-header,
+.obiettivi-header {
   --color: #1c1c1c;
 }
 
-/* Blocchetto beige completo per ogni obiettivo */
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+}
+
+.obiettivi-header {
+  --background: #f7e2d2;
+  --color: #000;
+}
+
+/* OBIECTIVI */
 ion-item.goal-item {
   --background: transparent;
   --ion-item-background: transparent;
@@ -22,7 +35,7 @@ ion-item.goal-item {
   box-shadow: none;
 }
 
-/* Testo dell’obiettivo */
+/* TESTO DELL'OBIETTIVO */
 .goal-label {
   font-weight: 600;
   font-size: 15px;
@@ -31,7 +44,7 @@ ion-item.goal-item {
   white-space: normal;
 }
 
-/* Checkbox lilla rotondo */
+/* CHECKBOX LILLA */
 .custom-checkbox {
   --background-checked: #7752b2;
   --checkmark-color: white;
@@ -39,7 +52,7 @@ ion-item.goal-item {
   --size: 20px;
 }
 
-/* Testo se lista vuota */
+/* MESSAGGIO LISTA VUOTA */
 .no-obiettivi {
   text-align: center;
   font-style: italic;
@@ -47,7 +60,7 @@ ion-item.goal-item {
   margin-top: 30px;
 }
 
-/* Stile dei bottoni */
+/* STILE DEI BOTTONI */
 .button-row {
   display: flex;
   justify-content: space-between;

@@ -1,4 +1,8 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
 
+/* CONTAINER E BACKGROUND */
 ion-content {
   display: flex;
   justify-content: center;
@@ -9,6 +13,7 @@ ion-content {
   --background: url('/assets/SfondoImpostazioni.png') no-repeat center center / cover;
 }
 
+/* IMMAGINE DEL PROFILO */
 .profile-picture-container {
   position: relative;
   width: 155px;
@@ -29,6 +34,7 @@ ion-content {
   display: block;
 }
 
+/* ICONA CAMBIO FOTO */
 .change-photo-icon {
   position: absolute;
   bottom: 4px;
@@ -41,63 +47,66 @@ ion-content {
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
+/* SEZIONE INFO */
 .info-section {
   margin-top: 6px;
+}
 
-  .field-label {
-    font-size: 1.0rem;
-    font-weight: 600;
-    color: #000000;
-    margin-bottom: 9px;
-    margin-left: 4px;
-  }
+.field-label {
+  font-size: 1.0rem;
+  font-weight: 600;
+  color: #000000;
+  margin-bottom: 9px;
+  margin-left: 4px;
+}
 
-  ion-item {
-    --highlight-color-focused: transparent;
-    --highlight-color-valid: transparent;
-    --highlight-color-invalid: transparent;
-    border-radius: 8px;
-    margin-bottom: 20px;
-    --background: #ffffff;
-    --padding-start: 12px;
-    --inner-padding-end: 12px;
-    border: 2px solid #e8e8e8;
-    margin-top: 10px;
+/* FORM E DATI */
+ion-item {
+  --highlight-color-focused: transparent;
+  --highlight-color-valid: transparent;
+  --highlight-color-invalid: transparent;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  --background: #ffffff;
+  --padding-start: 12px;
+  --inner-padding-end: 12px;
+  border: 2px solid #e8e8e8;
+  margin-top: 10px;
+}
 
+ion-item ion-label {
+  color: #000;
+  font-size: 0.9rem;
+}
 
-    ion-label {
-      color: #00000f;
-      font-size: 0.9rem;
-    }
+ion-item ion-input,
+ion-item ion-select {
+  color: #000;
+  font-size: 1rem;
+}
 
-    ion-input, ion-select {
-      color: #000;
-      font-size: 1rem;
-    }
-  }
+ion-datetime {
+  --background: transparent;
+  --ion-background-color: transparent;
+  --ion-item-background: transparent;
+  color: #000;
+}
 
-  ion-datetime {
-    --background: transparent;
-    --ion-background-color: transparent;
-    --ion-item-background: transparent;
-    color: #000;
-  }
+ion-datetime::part(calendar),
+ion-datetime::part(time-body),
+ion-datetime::part(title) {
+  background: transparent;
+}
 
-  ion-datetime::part(calendar),
-  ion-datetime::part(time-body),
-  ion-datetime::part(title) {
-    background: transparent;
-  }
-
-  ion-button {
-    margin-top: 20px;
-    --background: #2e2b6b;
-    --background-activated: #1f1d5c;
-    --border-radius: 8px;
-    font-weight: bold;
-    font-size: 1rem;
-    color: #fff;
-    margin-left: 60px;
-    margin-right: 60px;
-  }
+/* BUTTON */
+ion-button {
+  margin-top: 20px;
+  --background: #2e2b6b;
+  --background-activated: #1f1d5c;
+  --border-radius: 8px;
+  font-weight: bold;
+  font-size: 1rem;
+  color: #fff;
+  margin-left: 60px;
+  margin-right: 60px;
 }

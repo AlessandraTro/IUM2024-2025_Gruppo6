@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
-import { IonicModule, AlertController } from '@ionic/angular';
-import { FooterComponent } from '../../component/footer/footer.component';
+import {Component, OnInit} from '@angular/core';
+import {CommonModule, Location} from '@angular/common';
+import {FormsModule} from '@angular/forms';
+import {IonicModule, AlertController} from '@ionic/angular';
+import {FooterComponent} from '../../component/footer/footer.component';
+import {} from "@ionic/angular/standalone";
 
 @Component({
     selector: 'app-obiettivi',
@@ -12,14 +13,15 @@ import { FooterComponent } from '../../component/footer/footer.component';
     imports: [
         CommonModule,
         FormsModule,
-        IonicModule,          // ✅ contiene già IonFooter
-        FooterComponent       // ✅ componente del tuo footer
+        IonicModule,
+        FooterComponent,
     ]
 })
 export class ObiettiviPage implements OnInit {
     obiettivi: { titolo: string; completato: boolean }[] = [];
 
-    constructor(private alertCtrl: AlertController) {}
+    constructor(private alertCtrl: AlertController, private location: Location) {
+    }
 
     ngOnInit() {
         const salvati = localStorage.getItem('obiettivi');
@@ -48,12 +50,12 @@ export class ObiettiviPage implements OnInit {
                 }
             ],
             buttons: [
-                { text: 'Annulla', role: 'cancel' },
+                {text: 'Annulla', role: 'cancel'},
                 {
                     text: 'Aggiungi',
                     handler: (data) => {
                         if (data?.titolo?.trim()) {
-                            this.obiettivi.push({ titolo: data.titolo.trim(), completato: false });
+                            this.obiettivi.push({titolo: data.titolo.trim(), completato: false});
                             this.salvaObiettivi();
                         }
                     }
@@ -95,7 +97,7 @@ export class ObiettiviPage implements OnInit {
                 }
             ],
             buttons: [
-                { text: 'Annulla', role: 'cancel' },
+                {text: 'Annulla', role: 'cancel'},
                 {
                     text: 'Salva',
                     handler: (data) => {
@@ -109,5 +111,9 @@ export class ObiettiviPage implements OnInit {
         });
 
         await alert.present();
+    }
+
+    goBack() {
+        this.location.back();
     }
 }

@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {CommonModule} from '@angular/common';
 import {FormsModule} from '@angular/forms';
 import {RouterLink} from '@angular/router';
@@ -34,7 +34,6 @@ export class LoginPage {
     }
 
     login() {
-        // Stampa tutti gli utenti salvati nel localStorage
         const utentiRegistrati = JSON.parse(localStorage.getItem('utenti') || '[]');
         console.log('Tutti gli utenti registrati:', utentiRegistrati);
 

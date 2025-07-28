@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule} from '@angular/common';
-import {FormsModule} from '@angular/forms'; // Necessario per ngModel
+import {FormsModule} from '@angular/forms';
 import {IonicModule, AlertController, ToastController} from '@ionic/angular'
-import {UtenteService} from '../../Service/utente.service';
 import {HeaderImpostazioniPage} from "../../component/header-impostazioni/header-impostazioni.page";
 
 @Component({
@@ -29,17 +28,15 @@ export class PrivacyPage implements OnInit {
     }
 
     ionViewWillEnter() {
-        // Se vuoi ricaricare ogni volta che rientri nella pagina
         this.caricaPassword();
     }
 
-    /* Recupera dal localStorage l'utente loggato e la sua password */
     caricaPassword() {
         const utenteLoggato = JSON.parse(localStorage.getItem('utenteLoggato') || 'null');
         if (utenteLoggato) {
             this.password = utenteLoggato.password;
         } else {
-            this.password = ''; // Nessun utente loggato
+            this.password = '';
         }
     }
 
@@ -85,7 +82,6 @@ export class PrivacyPage implements OnInit {
             utenteLoggato.password = nuovaPassword;
             localStorage.setItem('utenteLoggato', JSON.stringify(utenteLoggato));
 
-            // ✅ Aggiorna anche l'array utenti nel localStorage
             let utenti = JSON.parse(localStorage.getItem('utenti') || '[]');
             utenti = utenti.map((u: any) =>
                 u.email.toLowerCase() === utenteLoggato.email.toLowerCase()
@@ -103,8 +99,8 @@ export class PrivacyPage implements OnInit {
         const toast = await this.toastController.create({
             message: '✅ Password aggiornata con successo!',
             duration: 2000,
-            position: 'bottom', // puoi usare anche 'top' o 'middle'
-            color: 'success',   // verde (puoi usare 'primary', 'warning', ecc.)
+            position: 'bottom',
+            color: 'success',
             icon: 'checkmark-circle-outline'
         });
         toast.present();

@@ -10,6 +10,7 @@ import {
     IonToolbar
 } from '@ionic/angular/standalone';
 import {FooterComponent} from "../../component/footer/footer.component";
+import {DiarioService} from "../../Service/diario.service";
 
 @Component({
     selector: 'app-diario',
@@ -20,7 +21,7 @@ import {FooterComponent} from "../../component/footer/footer.component";
 })
 export class DiarioPage implements OnInit {
 
-    constructor(private location: Location) {
+    constructor(private location: Location, private diarioService: DiarioService) {
     }
 
     selectedDate = '20 Maggio 2025';
@@ -68,12 +69,12 @@ export class DiarioPage implements OnInit {
         this.selectedDay = day;
         this.selectedDate = `${day} ${this.monthNames[this.currentMonth]} ${this.currentYear}`;
 
+        // Carica le annotazioni salvate precedentemente
+        this.diaryEntries = this.diarioService.loadDiaryEntries();
+
         const todayKey = this.getEntryKey(day, this.currentMonth, this.currentYear);
         if (!this.diaryEntries[todayKey]) {
-            this.diaryEntries[todayKey] = `Oggi mi sento un po’ confusa...
-Ho tante cose in testa e faccio fatica a concentrarmi.
-Però mi sono presa 10 minuti per respirare, e mi ha fatto bene.
-Non ho risolto tutto, ma almeno mi sento più presente.`;
+            this.diaryEntries[todayKey] = `Oggi mi sento un po’ confusa...`;
         }
     }
 
@@ -124,6 +125,10 @@ Non ho risolto tutto, ma almeno mi sento più presente.`;
     saveEntry() {
         const key = this.getEntryKey(this.selectedDay, this.currentMonth, this.currentYear);
         this.diaryEntries[key] = this.currentInputText;
+
+        // Salva le annotazioni nel localStorage
+        this.diarioService.saveDiaryEntries(this.diaryEntries);
+
         this.closeModal();
 
         this.showSuccessMessage = true;
@@ -135,5 +140,4 @@ Non ho risolto tutto, ma almeno mi sento più presente.`;
     goBack() {
         this.location.back();
     }
-
 }

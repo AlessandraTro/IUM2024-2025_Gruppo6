@@ -14,12 +14,10 @@ export class AuthService {
         const nuovoUtente = this.inMemoryDataService.addUser(userData);
 
         if (!nuovoUtente) {
-            // Simula un errore per l'observable se l'utente è null (email duplicata)
             return new Observable(observer => {
                 observer.error('Email già registrata');
             });
         }
-
         return of(nuovoUtente);
     }
 }
