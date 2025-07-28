@@ -1,55 +1,68 @@
-.meditation-image {
-  border-radius: 12px;        /* Rende i bordi arrotondati */
-  margin-top: 16px;           /* Distanza dall'elemento sopra */
-  object-fit: cover;          /* Rende l'immagine che copra l'area senza deformarsi */
-  width: 300px;               /* Larghezza fissa */
-  height: 300px;              /* Altezza fissa */
-  display: block;             /* Rende l'immagine un elemento di blocco per il centering */
-  margin: 16px auto;          /* Centra orizzontalmente e aggiunge uno spazio sopra/sotto */
+.body-scan-header {
+  --background: #f7e2d2;
+  --color: #000;
 }
 
+/* IMMAGINE DI MEDITAZIONE */
+.meditation-image {
+  border-radius: 12px;
+  margin-top: 16px;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 16px auto;
+}
+
+/* TIME INDICATOR */
 .time-indicator {
   display: flex;
   justify-content: space-between;
-  font-size: 0.9rem;           /* Riduce la dimensione del testo */
-  padding: 0 4px;              /* Spaziatura laterale */
-  margin-top: -12px;           /* Allontana la barra dal contenuto sopra */
-  margin-bottom: 16px;         /* Spazio sotto */
-  color: var(--ion-color-dark); /* Colore del testo */
+  font-size: 0.9rem;
+  padding: 0 4px;
+  margin-top: -12px;
+  margin-bottom: 16px;
+  color: var(--ion-color-dark);
 }
 
+/* AUDIO CONTROLS */
 .audio-controls {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  font-size: 32px;             /* Grandezza delle icone */
-  margin-bottom: 1.5rem;       /* Distanza dalla sezione successiva */
+  font-size: 32px;
+  margin-bottom: 1.5rem;
 }
 
 .audio-controls ion-icon {
-  color: var(--ion-color-medium); /* Colore delle icone audio */
+  color: var(--ion-color-medium);
 }
 
 .play-btn {
-  font-size: 48px;             /* Dimensione del bottone play */
-  color: var(--ion-color-primary); /* Colore primario per il play */
+  font-size: 48px;
+  color: var(--ion-color-primary);
 }
 
+/* BENEFIT BOX */
 .benefit-box {
-  background-color: #fdecec;  /* Colore di sfondo rosato per il box */
-  padding: 12px;              /* Spaziatura interna */
-  border-radius: 8px;         /* Bordi arrotondati */
-  font-size: 0.95rem;         /* Leggermente più piccolo per migliorare la leggibilità */
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Leggerissima ombra per un effetto tridimensionale */
+  background-color: #fdecec;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .benefit-box p {
-  margin: 0;                  /* Rimuove margini extra per una spaziatura coerente */
-  color: var(--ion-color-dark); /* Colore del testo */
+  margin: 0;
+  color: var(--ion-color-dark);
 }
+
+/* ICONS */
 :host .ionicon {
-  color: #fdecec; /* Cambia il colore dell'icona */
+  color: #fdecec;
 }
+
+/* HEADER */
 ion-toolbar.top-header {
   --background: #f3e3d9;
   --color: #1c1c1c;
