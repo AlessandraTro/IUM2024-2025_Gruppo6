@@ -1,8 +1,18 @@
-ion-header {
-  background-color: #f8f1e4;
+* {
+  font-family: 'Times New Roman', Times, serif;
 }
-.custom-header-toolbar {
+
+/* HEADER E TOOLBAR */
+ion-header,
+ion-toolbar,
+ion-footer {
+  background-color: #f8f1e4;
   --background: #f8f1e4;
+  --color: #3c3c3c;
+}
+
+.custom-header-toolbar {
+  --background: #f4e2d8;
   --color: #3c3c3c;
   padding: 0;
 }
@@ -46,20 +56,25 @@ ion-header {
   object-fit: cover;
 }
 
-ion-toolbar {
-  --background: #f8f1e4;
-  --color: #3c3c3c;
+/* TIPOGRAFIA */
+h2, h3 {
+  color: black;
 }
-* {
-  font-family: 'Times New Roman', Times, serif;
-}
+
 h2 {
   font-weight: bold;
-  color: black;
 }
-h3 {
-  color: black;
+
+/* GRID E COLONNE */
+ion-grid {
+  margin-top: 20px;
 }
+
+ion-col {
+  text-align: center;
+}
+
+/* BOTTONI */
 .custom-button {
   background-color: #F7F3F0;
   color: #F7F3F0;
@@ -88,112 +103,83 @@ h3 {
   font-size: 10px;
 }
 
-ion-grid {
-  margin-top: 20px;
-}
-
-ion-col {
-  text-align: center;
+/* CARD GENERICHE */
+ion-card,
+.custom-card,
+.custom-card-doppio,
+.custom-card-doppio2,
+.motivational-card {
+  background-color: #F7F3F0;
+  border-radius: 15px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 ion-card {
   margin-top: 20px;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.domanda{
-  display: flex;
-  justify-content: center;
-  font-size: 25px;
-  margin: 5px 0 5px 0;
-}
 .custom-card {
-  background-color: #F7F3F0;
-  border-radius: 15px;
   margin: 20px 0;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-.card-header {
-  background-color: #F7F3F0;
-  color: #F7F3F0;
-  padding: 10px;
-  border-radius: 15px;
-  text-align: center;
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  align-items: center;
-}
-.card-header .card-icon {
-  //width: 150px;
-  //height: 150px;
-  vertical-align: middle;
-}
-
-.card-content {
-  padding: 15px;
-  text-align: center;
-  color: #3c3c3c;
-  font-size: 14px;
-}
 .custom-card-doppio {
-  background-color: #F7F3F0;
-  border-radius: 15px;
   margin-left: 10px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.custom-card-doppio2 {
-  background-color: #F7F3F0;
-  border-radius: 15px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-.card-header-doppio {
-  background-color: #F7F3F0;
-  color: #F7F3F0;
-  padding: 10px;
-  border-radius: 15px;
-  text-align: center;
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content: space-around;
-  align-items: center;
-}
-.card-content-doppio {
-  padding: 15px;
-  text-align: center;
-  color: #3c3c3c;
-  font-size: 14px;
-}
-.doppio{
-  display: flex;
-}
-
-ion-footer {
-  background-color: #f8f1e4;
 }
 
 .motivational-card {
-  background-color: #F7F3F0;
   padding: 20px;
-  border-radius: 15px;
   margin-top: 20px;
   text-align: center;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
 }
 
-.motivational-card h2 {
+.motivational-card h2,
+.motivational-card p {
   color: #3c3c3c;
   margin-bottom: 10px;
 }
 
 .motivational-card p {
   font-size: 16px;
-  color: #3c3c3c;
-  margin-bottom: 10px;
 }
 
+/* CONTENUTI DELLE CARD */
+.card-header,
+.card-header-doppio {
+  background-color: #F7F3F0;
+  color: #F7F3F0;
+  padding: 10px;
+  border-radius: 15px;
+  text-align: center;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.card-header .card-icon {
+  vertical-align: middle;
+}
+
+.card-content,
+.card-content-doppio {
+  padding: 15px;
+  text-align: center;
+  color: #3c3c3c;
+  font-size: 14px;
+}
+
+.doppio {
+  display: flex;
+}
+
+.domanda {
+  display: flex;
+  justify-content: center;
+  font-size: 25px;
+  margin: 5px 0;
+}
+
+/* MODALE */
 .custom-modal-backdrop {
   position: fixed;
   top: 0;
@@ -214,7 +200,6 @@ ion-footer {
   max-width: 400px;
   padding: 25px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  font-family: 'Times New Roman', Times, serif;
   animation: fadeIn 0.3s ease-in-out;
 }
 
@@ -254,7 +239,6 @@ ion-footer {
   border-radius: 12px;
   padding: 10px;
   font-size: 14px;
-  font-family: 'Times New Roman', Times, serif;
   resize: none;
   box-sizing: border-box;
   background-color: #fff;
@@ -278,7 +262,14 @@ ion-footer {
   background-color: #2a2a2a;
 }
 
+/* ANIMAZIONI */
 @keyframes fadeIn {
-  from { opacity: 0; transform: scale(0.95); }
-  to { opacity: 1; transform: scale(1); }
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
