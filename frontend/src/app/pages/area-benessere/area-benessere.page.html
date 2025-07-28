@@ -10,9 +10,9 @@
 <ion-content class="ion-padding">
     <div class="top-banner">
         <div class="user-info">
-            <img class="avatar" src="assets/profilo.png" alt="Foto Sara">
+            <img class="avatar" [src]="userPhoto"  alt="Foto Sara">
             <div class="welcome-message">
-                <strong>Benvenuta Sara,</strong><br>
+                <strong>Benvenuta {{ username }},</strong><br>
                 <span>nell’area benessere</span>
             </div>
             <div class="stats-icon" [routerLink]="['/progressi']">

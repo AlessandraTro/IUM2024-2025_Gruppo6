@@ -20,11 +20,27 @@ import {IonicModule} from "@ionic/angular";
     ]
 })
 export class AreaBenesserePage implements OnInit {
+    username: string = '';
+    userPhoto: string = 'assets/profilo.png';
 
     constructor(private router: Router, private location: Location) {
     }
 
-    ngOnInit(): void {
+    ngOnInit() {
+        const utenteLoggato = JSON.parse(localStorage.getItem('utenteLoggato') || 'null');
+
+
+        if (utenteLoggato) {
+            this.username = utenteLoggato.nome.split(' ')[0];
+        }
+    }
+
+    ionViewWillEnter() {
+        const utenteLoggato = JSON.parse(localStorage.getItem('utenteLoggato') || 'null');
+        if (utenteLoggato) {
+            this.username = (utenteLoggato.name || utenteLoggato.nome || 'Utente').split(' ')[0];
+            this.userPhoto = utenteLoggato.photo || 'assets/profilo.png';
+        }
     }
 
     vaiA(path: string) {
