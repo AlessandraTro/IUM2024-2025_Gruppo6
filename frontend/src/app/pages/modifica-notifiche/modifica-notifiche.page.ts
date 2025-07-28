@@ -19,10 +19,28 @@ import {HeaderImpostazioniPage} from "../../component/header-impostazioni/header
 })
 export class ModificaNotifichePage implements OnInit {
 
+    notificationSettings = {
+        consent: true,
+        push: false,
+        sound: true,
+        newContent: false,
+        newWellness: false
+    };
+
+
     constructor() {
     }
 
     ngOnInit() {
+        const savedSettings = localStorage.getItem('notificationSettings');
+        if (savedSettings) {
+            this.notificationSettings = JSON.parse(savedSettings);
+        }
     }
+
+    saveSettings() {
+        localStorage.setItem('notificationSettings', JSON.stringify(this.notificationSettings));
+    }
+
 
 }

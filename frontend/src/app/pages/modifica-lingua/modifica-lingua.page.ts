@@ -27,10 +27,15 @@ export class ModificaLinguaPage implements OnInit {
     }
 
     ngOnInit() {
+        const savedLanguage = localStorage.getItem('selectedLanguage');
+        if (savedLanguage) {
+            this.selectedLanguage = savedLanguage;
+        }
     }
 
-    selectLanguage(value: string) {
-        this.selectedLanguage = value;
+    selectLanguage(language: string) {
+        this.selectedLanguage = language;
+        localStorage.setItem('selectedLanguage', language);
     }
 
 }
