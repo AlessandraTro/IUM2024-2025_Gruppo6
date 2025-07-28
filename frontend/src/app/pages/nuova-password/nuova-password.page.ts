@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {CommonModule, Location} from '@angular/common';
 import {FormsModule} from '@angular/forms';
+import { AlertController } from '@ionic/angular';
 import {
     IonContent,
     IonIcon,
@@ -22,8 +23,12 @@ export class NuovaPasswordPage implements OnInit {
     showPassword1: boolean = false;
     showPassword2: boolean = false;
 
-    constructor(private route: ActivatedRoute, private router: Router, private location: Location) {
-    }
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private location: Location,
+        private alertController: AlertController
+    ) {}
 
     ngOnInit() {
         this.route.queryParams.subscribe(params => {
@@ -40,9 +45,26 @@ export class NuovaPasswordPage implements OnInit {
         this.location.back();
     }
 
-    resetPassword() {
+    async showAlert(title: string, message: string) {
+        const alert = await this.alertController.create({
+            header: title,
+            message: message,
+            cssClass: 'custom-alert',
+            buttons: [
+                {
+                    text: 'OK',
+                    role: 'confirm',
+                    cssClass: 'alert-button-ok',
+                }
+            ]
+        });
+
+        await alert.present();
+    }
+
+    async resetPassword() {
         if (this.password1 !== this.password2) {
-            alert('Le password non corrispondono');
+            await this.showAlert('Errore', 'Le password non corrispondono');
             return;
         }
 
@@ -52,10 +74,13 @@ export class NuovaPasswordPage implements OnInit {
         if (index !== -1) {
             utenti[index].password = this.password1;
             localStorage.setItem('utenti', JSON.stringify(utenti));
-            alert('Password aggiornata con successo!');
+            await this.showAlert('Successo', 'Password aggiornata con successo!');
             this.router.navigate(['/login']);
         } else {
-            alert('Utente non trovato');
+            this.showAlert('Errore', 'Utente non trovato');
         }
     }
+
+
+
 }
