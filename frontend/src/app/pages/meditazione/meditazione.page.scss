@@ -1,13 +1,28 @@
-/* Impostare l'immagine di sfondo per ion-content */
-ion-content {
-  background: url('/assets/SfondoAreaBenessere.png') no-repeat center center fixed; /* Assicurati che il percorso sia corretto */
-  background-size: cover; /* Fa sì che l'immagine copra tutta la pagina */
-  height: 100%; /* Assicurati che l'altezza sia al 100% */
-  width: 100%; /* Assicurati che la larghezza sia al 100% */
-  position: relative; /* Necessario per la sovrapposizione */
+* {
+  font-family: 'Times New Roman', Times, serif;
 }
 
-/* Sovrapposizione leggera per migliorare la leggibilità del testo */
+/* CONTAINER PRINCIPALE */
+ion-content {
+  background: url('/assets/SfondoAreaBenessere.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* HEADER E SOTTOHEADER */
+.meditazione-header {
+  --background: #f7e2d2;
+  --color: #000;
+}
+
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+  --color: #1c1c1c;
+}
+
+/* LAYER SOVRAPPOSIZIONE */
 ion-content::after {
   content: '';
   position: absolute;
@@ -15,34 +30,27 @@ ion-content::after {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.3); /* Sovrapposizione semi-trasparente */
-  z-index: -1; /* Posiziona l'overlay dietro il contenuto */
-}
-ion-toolbar.top-header {
-  --background: #f3e3d9;
-  --color: #1c1c1c;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
 }
 
-
-
-
-/* Definizione dei colori locali per la pagina Meditazione */
+/* VARIABILI GLOBALE */
 :host {
-  --primary-color: #442f70;  /* Colore principale */
-  --secondary-color: #e6e6e6; /* Colore di sfondo delle sezioni attive */
-  --accent-color: #d199ea;  /* Colore per le azioni principali (icona play, etc.) */
-  --card-background: #f6e5d8;  /* Colore di sfondo per le card */
-  --shadow-color: rgba(0, 0, 0, 0.1); /* Ombra leggera per le card */
-  --chip-background: #f3f3f3; /* Colore di background per i chip */
-  --text-primary: #4a4a4a;  /* Colore del testo principale */
-  --text-secondary: #7b7b7b; /* Colore del testo secondario */
-  --footer-background: #ffffff; /* Colore di sfondo footer */
-  --card-border-radius: 12px; /* Bordo arrotondato per le card */
-  --chip-border-radius: 20px; /* Bordo arrotondato per i chip */
-  --play-icon-color: #000000; /* Colore per l'icona play */
+  --primary-color: #442f70;
+  --secondary-color: #e6e6e6;
+  --accent-color: #d199ea;
+  --card-background: #f6e5d8;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --chip-background: #f3f3f3;
+  --text-primary: #4a4a4a;
+  --text-secondary: #7b7b7b;
+  --footer-background: #ffffff;
+  --card-border-radius: 12px;
+  --chip-border-radius: 20px;
+  --play-icon-color: #000000;
 }
 
-/* Barra di ricerca */
+/* SEARCHBAR */
 .search-container {
   display: flex;
   align-items: center;
@@ -50,25 +58,22 @@ ion-toolbar.top-header {
   margin-bottom: 16px;
 }
 
-/* Barra di ricerca bianca */
 ion-searchbar {
-  --background: #fff; /* Sfondo bianco */
-  --color: #333; /* Colore del testo scuro */
-  --placeholder-color: #aaa; /* Colore del placeholder */
-  --border-radius: 25px; /* Bordo arrotondato */
-  --padding-start: 12px; /* Padding per migliorare l'allineamento del testo */
-  --padding-end: 12px; /* Padding per migliorare l'allineamento del testo */
-  --border: 1px solid #ccc; /* Aggiungi il bordo chiaro */
+  --background: #fff;
+  --color: #333;
+  --placeholder-color: #aaa;
+  --border-radius: 25px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border: 1px solid #ccc;
 }
 
-/* Aggiungi un'ombra leggera alla barra di ricerca */
 ion-searchbar::part(input) {
   border-radius: 25px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-
-/* Segmenti di filtro */
+/* SEGMENTI */
 ion-segment {
   margin-top: 10px;
   --border-color: #ccc;
@@ -81,14 +86,24 @@ ion-segment-button {
   --background-activated: var(--accent-color);
 }
 
-/* Card principale (Body Scan) */
-.meditation-card {
+/* CARDS */
+.meditation-card,
+.flat-card {
   margin-top: 16px;
   --background: var(--card-background);
   --box-shadow: 0 2px 8px var(--shadow-color);
   --border-radius: var(--card-border-radius);
 }
-
+.card-content-ios {
+  -webkit-padding-start: 20px;
+  padding-inline-start: 15px;
+  -webkit-padding-end: 20px;
+  padding-inline-end: 4px;
+  padding-top: 15px;
+  padding-bottom: 14px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
 .meditation-card .chip-group {
   margin-bottom: 8px;
 }
@@ -112,21 +127,8 @@ ion-segment-button {
   font-size: 32px;
 }
 
-/* Sezione per te */
-.section-title {
-  font-size: 1.4rem;
-  margin-top: 24px;
-  color: var(--text-primary);
-}
-
-.flat-card {
-  margin-top: 16px;
-  --background: var(--card-background);
-  --box-shadow: 0 2px 8px var(--shadow-color);
-  --border-radius: var(--card-border-radius);
-}
-
-.flat-card h3 {
+.flat-card h3,
+.flat-card p {
   color: var(--text-primary);
 }
 
@@ -134,10 +136,17 @@ ion-segment-button {
   color: var(--text-secondary);
 }
 
-/* Footer Tab Bar */
+/* SEZIONE TITLE */
+.section-title {
+  font-size: 1.4rem;
+  margin-top: 24px;
+  color: var(--text-primary);
+}
+
+/* FOOTER PERSONALIZZATO */
 ion-tab-bar {
   --background: var(--footer-background);
-  --color: var(--primary-color); /* Colore delle icone nella tab bar */
+  --color: var(--primary-color);
   --border-top: 1px solid #ddd;
 }
 
@@ -148,7 +157,8 @@ ion-tab-button {
 ion-tab-button ion-label {
   font-size: 12px;
 }
-/* Chip group per le etichette 15 Mins, Beginner, Focus */
+
+/* CHIP */
 .chip-group {
   display: flex;
   flex-wrap: wrap;
@@ -157,27 +167,25 @@ ion-tab-button ion-label {
 }
 
 ion-chip {
-  background: #f1c6b0; /* Rosa carne di default */
-  --color: #4a4a4a; /* Colore del testo nei chip */
-  --border-radius: 20px; /* Bordo arrotondato per i chip */
-}
-
-/* Modifica il colore dei chip in arancione */
-ion-chip[color="orange"] {
-  --background: #fb7707; /* Colore arancione chiaro */
-  --color: #fff; /* Colore del testo bianco */
+  background: #f1c6b0;
+  --color: #4a4a4a;
   --border-radius: 20px;
 }
 
-/* Titoli h2 */
+ion-chip[color="orange"] {
+  --background: #fb7707;
+  --color: #fff;
+}
+
+/* MESSAGGI */
 h2 {
   font-weight: bold;
   color: var(--text-primary);
 }
-/* Cambia la sottolineatura del segmento attivo in viola */
-ion-segment-button[aria-selected="true"] {
-  --background-activated: var(--primary-color); /* Colore di attivazione (viola) */
-  --color: #fff; /* Colore del testo attivo */
-  border-bottom: 2px solid var(--primary-color); /* Bordo inferiore viola */
-}
 
+/* SELEZIONATO */
+ion-segment-button[aria-selected="true"] {
+  --background-activated: var(--primary-color);
+  --color: #fff;
+  border-bottom: 2px solid var(--primary-color);
+}
