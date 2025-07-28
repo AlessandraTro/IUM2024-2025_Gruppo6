@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class UtenteService {
     private apiUrl = 'api/utenti';
-
+    private storageKey = 'utenti';
     constructor(private http: HttpClient) {}
 
     login(email: string, password: string): Observable<any | null> {
@@ -43,5 +43,12 @@ export class UtenteService {
             localStorage.setItem(storageKey, JSON.stringify(utenti));
             console.log('Sara inserita nel localStorage');
         }
+    }
+    updateUser(updatedUser: any): void {
+        let utenti = JSON.parse(localStorage.getItem(this.storageKey) || '[]');
+        utenti = utenti.map((u: any) =>
+            u.email.toLowerCase() === updatedUser.email.toLowerCase() ? { ...u, ...updatedUser } : u
+        );
+        localStorage.setItem(this.storageKey, JSON.stringify(utenti));
     }
 }

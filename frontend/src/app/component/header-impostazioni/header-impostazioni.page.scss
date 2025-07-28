@@ -1,0 +1,54 @@
+.header {
+  ion-toolbar {
+    --background: #ffffff;
+    --color: #000000;
+    --border-width: 0;
+    --border-color: transparent !important;
+    display: flex;
+    align-items: flex-start;
+    padding: 12px;
+    min-height: 80px;
+    box-shadow: none !important;
+    border-bottom: none !important;
+  }
+
+  ion-back-button {
+    --color: #000000; /* ✅ freccia nera */
+    --icon-font-size: 20px; /* ✅ grandezza simile alla foto */
+    text-transform: none;
+    margin-left: 6px;
+  }
+
+  .header-texts {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* ✅ allineato tutto a sinistra */
+    margin-left: 18px; /* spazio tra freccia e testo */
+    margin-top: 2px;
+
+    .main-title {
+      font-size: 22px;
+      font-weight: 600;
+      color: #000;
+      text-align: left;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      color: #000000;
+      margin-top: 2px;
+      text-align: left;
+    }
+  }
+}
+
+.header-md {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+}
+
+.header-ios {
+  box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  border-bottom: none !important;
+}

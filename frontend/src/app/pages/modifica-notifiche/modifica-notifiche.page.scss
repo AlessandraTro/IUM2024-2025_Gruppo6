@@ -1,0 +1,44 @@
+ion-content {
+  --background: #ffffff url('/assets/SfondoImpostazioni.png') no-repeat center center / cover;
+}
+
+h3 {
+  font-size: 1.3rem;
+  margin: 20px 0 10px 25px;
+  color: #000;
+}
+
+.settings-card {
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden; /* ✅ Arrotonda bene i bordi */
+  margin-bottom: 20px;
+
+  ion-item {
+    border-radius: 12px;
+    margin: 14px 16px;
+    min-height: 60px;
+    --inner-padding-top: 14px;
+    --inner-padding-bottom: 14px;
+    --padding-start: 20px;
+    --inner-padding-end: 14px;
+    --background: #f5f5f5;
+    --background-activated: #eeeeee;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.05);
+    transition: background 0.3s ease;
+    display: flex;
+    align-items: center; /* ✅ centra verticalmente testo e toggle */
+    justify-content: space-between; /* ✅ spinge il toggle a destra */
+    font-size: 19px;
+
+    ion-label {
+      margin-bottom: 4px;
+    }
+
+    ion-toggle {
+      --background: #dcdcdc;
+      --background-checked: #4cd964 !important;
+    }
+  }
+
+}

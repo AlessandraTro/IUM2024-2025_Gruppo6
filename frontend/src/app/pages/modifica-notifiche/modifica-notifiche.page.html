@@ -1,0 +1,38 @@
+<app-header-impostazioni [subtitle]="'Notifiche'"></app-header-impostazioni>
+
+<ion-content>
+
+    <!-- ✅ Gruppo 1 -->
+    <div class="settings-card">
+        <ion-item lines="none">
+            <ion-label>Consenti Notifiche</ion-label>
+            <ion-toggle  slot= "end" [checked]="true"></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label>Notifiche push</ion-label>
+            <ion-toggle slot= "end" [checked]="false"></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label>Suoni</ion-label>
+            <ion-toggle slot= "end" [checked]="true"></ion-toggle>
+        </ion-item>
+    </div>
+
+    <h3 class="mt-2">Notificami per...</h3>
+
+    <!-- ✅ Gruppo 2 -->
+    <div class="settings-card">
+        <ion-item lines="none">
+            <ion-label>Novità nei contenuti</ion-label>
+            <ion-toggle slot= "end" [checked]="false"></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label>Novità nelle pratiche benessere</ion-label>
+            <ion-toggle slot= "end" [checked]="false"></ion-toggle>
+        </ion-item>
+    </div>
+
+</ion-content>

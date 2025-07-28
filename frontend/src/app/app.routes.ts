@@ -50,16 +50,71 @@ export const routes: Routes = [
     path: 'sound/:pageKey',
     loadComponent: () => import('./pages/sound/sound.page').then(m => m.SoundPage)
   },
-  /*{
+  {
     path: 'profilo-utente',
     loadComponent: () => import('./pages/profilo-utente/profilo-utente.page').then( m => m.ProfiloUtentePage)
   },
   {
     path: 'modifica-profilo',
     loadComponent: () => import('./pages/modifica-profilo/modifica-profilo.page').then( m => m.ModificaProfiloPage)
-  },*/
+  },
+  {
+    path: 'modifica-lingua',
+    loadComponent: () => import('./pages/modifica-lingua/modifica-lingua.page').then( m => m.ModificaLinguaPage)
+  },
+
+  {
+    path: 'modifica-notifiche',
+    loadComponent: () => import('./pages/modifica-notifiche/modifica-notifiche.page').then( m => m.ModificaNotifichePage)
+  },
+  {
+    path: 'faq',
+    loadComponent: () => import('./pages/faq/faq.page').then( m => m.FaqPage)
+  },
+  {
+    path: 'privacy',
+    loadComponent: () => import('./pages/privacy/privacy.page').then( m => m.PrivacyPage)
+  },
+  {
+    path: 'header-impostazioni',
+    loadComponent: () => import('./component/header-impostazioni/header-impostazioni.page').then( m => m.HeaderImpostazioniPage)
+  },
+
+
+
   /*{
     path: 'area-benessere',
     loadComponent: () => import('./pages/area-benessere/area-benessere.page').then( m => m.AreaBenesserePage)
-  }*/
+  }
+  {
+  path: 'obiettivi',
+  loadComponent: () =>
+      import('./pages/obiettivi/obiettivi.page').then(m => m.ObiettiviPage)
+  },
+  {
+  path: 'meditazione',
+  loadComponent: () => import('./pages/meditazione/meditazione.page').then(m => m.MeditazionePage)
+  },
+  {
+  path: 'body-scan',
+  loadComponent: () => import('./pages/body-scan/body-scan.page').then(m => m.BodyScanPage)
+  },
+
+  {
+  path: 'player',
+  loadComponent: () => import('./pages/player/player.page').then( m => m.PlayerPage)
+},
+{
+  path: 'community',
+  loadComponent: () => import('./pages/community/community.page').then( m => m.CommunityPage)
+  },
+  {
+  path: 'diario',
+  loadComponent: () => import('./pages/diario/diario.page').then( m => m.DiarioPage)
+  },
+  {
+  path: 'respira',
+  loadComponent: () => import('./pages/respira/respira.page').then( m => m.RespiraPage)
+  },
+  */
 ];
