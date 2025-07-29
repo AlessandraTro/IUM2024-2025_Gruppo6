@@ -1,0 +1,132 @@
+<ion-header>
+    <div class="header">
+        <div class="back-button" (click)="goBack()">
+            <ion-icon name="chevron-back" class="back-icon"></ion-icon>
+        </div>
+        <img class="logo" src="assets/Logo_Black.png" alt="Serenity Logo">
+        <div class="header-content">
+
+            <span class="community-title">La Tua Community </span>
+            <span class="online-status">• 24 Online</span>
+        </div>
+        <div class="help-icon">
+            <img src="assets/help-circle.png" alt="Help" (click)="openHelpModal()">
+        </div>
+    </div>
+</ion-header>
+<ion-content>
+    <div class="chat-container">
+        <ion-card *ngFor="let message of chatHistory"
+                  [class]="message.sender === 'user' ? 'my-message' : 'other-message'">
+            <ion-card-content class="card-custom">
+                <p>{{ message.text }}</p>
+            </ion-card-content>
+        </ion-card>
+    </div>
+</ion-content>
+
+
+<div class="footer-wrapper">
+    <div class="chat-bottom-bar">
+        <div class="chat-pill">
+            <div class="pill-left">
+                <button class="icon-btn">
+                    <ion-icon name="add-outline"></ion-icon>
+                </button>
+                <button class="icon-btn">
+                    <ion-icon name="happy-outline"></ion-icon>
+                </button>
+            </div>
+            <input type="text"
+                   [(ngModel)]="message"
+                   placeholder="Type  a message"
+                   class="chat-textbox"
+                   (keyup.enter)="sendMessage()"/>
+
+            <button class="icon-btn" (click)="sendMessage()">
+                <ion-icon name="send-outline"></ion-icon>
+            </button>
+        </div>
+        <div class="chat-icons">
+            <button class="icon-btn">
+                <ion-icon name="mic-outline"></ion-icon>
+            </button>
+            <button class="icon-btn">
+                <ion-icon name="camera-outline"></ion-icon>
+            </button>
+        </div>
+    </div>
+</div>
+<ion-modal [isOpen]="isHelpModalOpen" (didDismiss)="closeHelpModal()">
+    <ng-template>
+        <ion-header>
+            <ion-toolbar>
+                <div class="regole-titolo">Regole della Community</div>
+                <ion-buttons slot="end">
+                    <ion-button (click)="closeHelpModal()">Chiudi</ion-button>
+                </ion-buttons>
+            </ion-toolbar>
+        </ion-header>
+
+        <ion-content>
+            <div class="regole-wrapper">
+                <p class="intro-text">
+                    Per mantenere uno spazio accogliente, sicuro e di supporto, ti chiediamo di rispettare alcune
+                    semplici regole.
+                    Serenity è una community costruita sulla fiducia, sull’empatia e sul rispetto reciproco.
+                </p>
+
+                <div class="regola">
+                    <ion-icon name="accessibility-outline" class="regola-icon"></ion-icon>
+                    <div>
+                        <strong>Rispetta gli altri</strong><br>
+                        Non sono tollerati insulti, linguaggio offensivo o discriminazioni di alcun tipo.
+                    </div>
+                </div>
+
+                <div class="regola">
+                    <ion-icon name="share-social-outline" class="regola-icon"></ion-icon>
+                    <div>
+                        <strong>Condividi con consapevolezza</strong><br>
+                        Evita di diffondere contenuti sensibili o personali senza il consenso degli interessati.
+                    </div>
+                </div>
+
+                <div class="regola">
+                    <ion-icon name="hand-left-outline" class="regola-icon"></ion-icon>
+                    <div>
+                        <strong>Supporta, non giudicare</strong><br>
+                        Offri ascolto e comprensione. Non è questo il luogo per diagnosi o consigli medici.
+                    </div>
+                </div>
+
+                <div class="regola">
+                    <ion-icon name="lock-closed-outline" class="regola-icon"></ion-icon>
+                    <div>
+                        <strong>Proteggi la tua privacy</strong><br>
+                        Non condividere informazioni personali come numeri di telefono, indirizzi o password.
+                    </div>
+                </div>
+
+                <div class="regola">
+                    <ion-icon name="alert-circle-outline" class="regola-icon"></ion-icon>
+                    <div>
+                        <strong>Segnala problemi</strong><br>
+                        Se noti comportamenti problemi, segnalali, aiutadoci a migliorarci.
+                    </div>
+                </div>
+
+                <div class="regola">
+                    <ion-icon name="chatbubble-ellipses-outline" class="regola-icon"></ion-icon>
+                    <div>
+                        <strong>Sii positivo</strong><br>
+                        Non essere troppo pessimista!
+                    </div>
+                </div>
+            </div>
+        </ion-content>
+    </ng-template>
+</ion-modal>
+
+
+

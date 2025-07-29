@@ -1,0 +1,113 @@
+<ion-header>
+    <ion-toolbar class="progressi-header">
+        <div class="back-button" (click)="goBack()">
+            <ion-icon name="chevron-back" class="back-icon"></ion-icon>
+        </div>
+        <ion-title>Mood Tracker</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="custom-content">
+
+    <p class="mood-completed">Daily mood log completato!</p>
+
+    <div class="mood-summary">
+        <div class="mood-header">
+            <img src="assets/img/felice.svg" alt="Happy" class="emoji"/>
+            <div>
+                <h2>Happy Mood</h2>
+                <p>Wow, Grandioso! Ti senti felice oggi! Continua così!</p>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="weekly-report-card">
+        <h3>Weekly Report</h3>
+
+        <div class="emoji-legend">
+            <div class="legend-item">
+                <img src="assets/img/paura.png" alt=" 😱"/>
+                <span class="dot" style="background-color: #ffe600"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/felice.svg" alt="🙂"/>
+                <span class="dot" style="background-color: #d6b4fc"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/calma.png" alt="😌"/>
+                <span class="dot" style="background-color: #f8d1ed"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/tristezza.svg" alt="😟"/>
+                <span class="dot" style="background-color: #ffb9a2"></span>
+            </div>
+            <div class="legend-item">
+                <img src="assets/img/rabbia.svg" alt="😡"/>
+                <span class="dot" style="background-color: #e1701e"></span>
+            </div>
+        </div>
+
+        <div class="bar-chart">
+            <div class="bar" style="height: 40%; background-color: #e1701e;"></div>
+            <div class="bar" style="height: 65%; background-color: #d6b4fc;"></div>
+            <div class="bar" style="height: 95%; background-color: #ffe600;"></div>
+            <div class="bar" style="height: 60%; background-color: #ffb9a2;"></div>
+            <div class="bar" style="height: 35%; background-color: #e1701e;"></div>
+            <div class="bar" style="height: 75%; background-color: #d6b4fc;"></div>
+            <div class="bar" style="height: 90%; background-color: #f8d1ed;"></div>
+        </div>
+
+        <div class="bar-labels">
+            <span>Mon</span>
+            <span>Tue</span>
+            <span>Wed</span>
+            <span>Thu</span>
+            <span>Fri</span>
+            <span>Sat</span>
+            <span>Sun</span>
+        </div>
+    </div>
+
+
+    <div class="calendar-card">
+        <div class="calendar-header">
+            <button class="arrow" (click)="prevMonth()">&lt;</button>
+            <h3>{{ currentMonth }}</h3>
+            <button class="arrow" (click)="nextMonth()">&gt;</button>
+        </div>
+
+
+        <div class="calendar-grid">
+            <div class="weekdays">
+                <span>Mon</span>
+                <span>Tue</span>
+                <span>Wed</span>
+                <span>Thu</span>
+                <span>Fri</span>
+                <span>Sat</span>
+                <span>Sun</span>
+            </div>
+
+            <div class="calendar-days">
+                <div
+                        *ngFor="let day of calendarDays"
+                        class="day"
+                        [ngClass]="{'emoji': day.emotion, 'faded': day.day === 0}"
+                >
+                    <ng-container *ngIf="day.day > 0; else empty">
+                        <img *ngIf="day.emotion"
+                             [src]="'assets/img/' + day.emotion + (day.emotion === 'paura' ? '.png' : '.svg')"/>
+                        <span>{{ day.day }}</span>
+                    </ng-container>
+                    <ng-template #empty><span>&nbsp;</span></ng-template>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</ion-content>
+
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

@@ -1,0 +1,68 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+.faq-content {
+  --background: url('/assets/SfondoImpostazioni.png') no-repeat center center / cover;
+}
+
+ion-accordion-group {
+  ion-accordion {
+    margin-top: 15px;
+    background: transparent;
+
+    ion-item {
+      background: transparent;
+      --border-radius: 20px;
+      --border-color: #b0b0b0;
+      --border-width: 2px;
+      --inner-border-width: 0;
+      margin: 10px 25px 0;
+      border-bottom: none;
+      min-height: 22px;
+      --padding-top: 12px;
+      --padding-bottom: 12px;
+      --inner-padding-end: 8px;
+
+      ion-label {
+        font-size: 17px;
+        font-weight: 460;
+      }
+
+      &::part(native) {
+        border-bottom: 2px solid #b0b0b0;
+        border-radius: 20px;
+      }
+    }
+
+    .ion-padding {
+      background: transparent;
+      border: 2px solid #b0b0b0;
+      border-top: none;
+      border-radius: 0 0 20px 20px;
+      margin: 0 25px 10px;
+      font-size: 17px;
+      padding: 12px;
+      color: #5f6b7a;
+    }
+
+    &.accordion-expanded,
+    &.accordion-expanding {
+      ion-item {
+        --background: #f5f9ff;
+        --border-color: #9dcffd;
+        --border-radius: 20px 20px 0 0;
+      }
+
+      ion-item::part(native) {
+        border-bottom: none !important;
+        border-radius: 20px 20px 0 0 !important;
+      }
+
+      .ion-padding {
+        background: #f5f9ff;
+        border-color: #9dcffd;
+      }
+    }
+  }
+}

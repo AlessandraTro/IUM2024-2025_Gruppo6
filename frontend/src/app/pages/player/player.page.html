@@ -1,0 +1,88 @@
+<ion-content *ngIf="card" fullscreen>
+
+    <audio #audioPlayer src="assets/audio/Relax.mp3" preload="auto"></audio>
+
+    <div
+            class="player-background"
+            [style.backgroundImage]="'url(' + card.image + ')'">
+
+        <div class="player-top-buttons">
+            <button class="circle-btn" (click)="goBack()">
+                <ion-icon name="chevron-back-outline"></ion-icon>
+            </button>
+            <button class="circle-btn">
+                <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+            </button>
+        </div>
+
+        <div class="player-center">
+            <button class="pause-btn" (click)="togglePlayPause()">
+                <ion-icon [name]="isPlaying ? 'pause-outline' : 'play-outline'"></ion-icon>
+            </button>
+        </div>
+
+
+        <div class="player-bottom">
+            <h2>{{ card.title }}</h2>
+            <p>Sleep meditation</p>
+
+            <div class="player-progress">
+                <span>{{ formatTime(currentTime) }}</span>
+                <ion-range
+                        [value]="currentTime"
+                        [max]="duration"
+                        color="success"
+                        class="custom-range"
+                ></ion-range>
+                <span>{{ formatTime(duration) }}</span>
+            </div>
+
+            <div *ngIf="isSessionEnded" class="session-end-overlay">
+                <h2>{{ card.title }}</h2>
+                <p>Sleep meditation</p>
+                <div class="listened-time">{{ formatTime(currentTime) }} Ascoltati</div>
+
+                <button class="save-btn" (click)="onSave()">Salva</button>
+                <a class="end-link" (click)="goBack()">Termina sessione senza Salvare</a>
+            </div>
+
+        </div>
+    </div>
+    <div *ngIf="showRatingModal" class="rating-modal">
+
+        <div class="rating-header">
+            <span class="rating-close" (click)="closeRatingModal()">&#x2715;</span>
+            <h5>Sessione Completata</h5>
+        </div>
+
+        <img [src]="card.image" class="rating-image" alt="Card image"/>
+        <h2 class="rating-title">{{ card.title }}</h2>
+        <p class="rating-subtitle">Sleep meditation</p>
+        <div class="rating-badge">{{ formatTime(currentTime) }} minuti ascoltati</div>
+
+        <div class="rating-footer">
+            <p class="rating-question">Ti è piaciuta questa sessione?</p>
+            <div class="rating-stars">
+                <ng-container *ngFor="let star of [1, 2, 3, 4, 5]">
+        <span
+                (click)="rating = star"
+                [class.filled]="rating >= star"
+        >★</span>
+                </ng-container>
+            </div>
+
+            <button
+                    class="rating-button"
+                    [disabled]="rating === 0"
+                    (click)="submitRating()"
+            >
+                Vota
+            </button>
+
+        </div>
+        <div *ngIf="showThanksPopup" class="thanks-toast">
+            Grazie per averci valutato!
+        </div>
+
+    </div>
+</ion-content>

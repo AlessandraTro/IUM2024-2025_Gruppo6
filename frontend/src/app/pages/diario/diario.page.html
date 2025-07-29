@@ -1,0 +1,92 @@
+<ion-header>
+    <ion-toolbar class="diario-header">
+        <div class="back-button" (click)="goBack()">
+            <ion-icon name="chevron-back" class="back-icon"></ion-icon>
+        </div>
+        <ion-title>Il tuo Diario</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <div class="diario-intro">
+        <p class="intro-domanda"><em>Come va oggi? Cosa senti?</em></p>
+        <p class="intro-testo">
+            Usa questo spazio per buttare fuori tutto. Anche senza ordine, anche senza filtri.
+        </p>
+    </div>
+
+    <div class="mese-switcher">
+        <ion-icon name="chevron-back-outline" (click)="changeMonth(-1)"></ion-icon>
+        <span class="mese-testo">{{ monthNames[currentMonth] }} {{ currentYear }}</span>
+        <ion-icon name="chevron-forward-outline" (click)="changeMonth(1)"></ion-icon>
+    </div>
+
+
+    <div class="calendar-grid">
+        <div class="calendar-day label">SUN</div>
+        <div class="calendar-day label">MON</div>
+        <div class="calendar-day label">TUE</div>
+        <div class="calendar-day label">WED</div>
+        <div class="calendar-day label">THU</div>
+        <div class="calendar-day label">FRI</div>
+        <div class="calendar-day label">SAT</div>
+
+        <div class="calendar-day empty" *ngFor="let _ of [].constructor(firstDayOfWeek)"></div>
+
+        <div class="calendar-day"
+             *ngFor="let day of daysInMonth"
+             [class.selected]="day === selectedDay"
+             [class.has-note]="diaryEntries[day]"
+             (click)="openModal(day)">
+            {{ day }}
+        </div>
+
+
+    </div>
+
+    <div class="divider"></div>
+
+    <h2 class="annotazioni-title">Le tue Annotazioni</h2>
+    <ng-container *ngFor="let giorno of getSortedDays()">
+        <div *ngIf="isInCurrentMonth(giorno)" class="annotazione-entry">
+            <p class="annotazioni-data">
+                {{ giorno.split('-')[0] }} {{ monthNames[currentMonth] }} {{ currentYear }}
+            </p>
+            <div class="annotazione-box" [ngClass]="getBoxColor(+giorno.split('-')[0])">
+                <p>{{ diaryEntries[giorno] }}</p>
+            </div>
+        </div>
+    </ng-container>
+
+
+</ion-content>
+<div class="custom-modal" *ngIf="isModalOpen">
+    <div class="custom-modal-content">
+
+        <h2 class="modal-title">Nuova Annotazione</h2>
+
+        <div class="modal-preview-box">
+            <p class="modal-date">{{ getFormattedDate(getEntryKey(selectedDay, currentMonth, currentYear)) }}</p>
+
+        </div>
+
+        <textarea [(ngModel)]="currentInputText"
+                  class="modal-textarea"
+                  placeholder="Scrivi qualcosa..."></textarea>
+
+        <div class="modal-buttons">
+            <button class="cancel-btn" (click)="closeModal()">Cancella</button>
+            <button class="add-btn" (click)="saveEntry()">Aggiungi</button>
+        </div>
+
+    </div>
+</div>
+
+<div *ngIf="showSuccessMessage" class="success-message">
+    Annotazione salvata con successo
+</div>
+
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

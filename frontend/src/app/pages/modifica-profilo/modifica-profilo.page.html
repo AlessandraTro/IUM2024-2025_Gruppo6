@@ -1,0 +1,50 @@
+<app-header-impostazioni [subtitle]="'Modifica Profilo'"></app-header-impostazioni>
+
+<ion-content class="ion-padding background" fullscreen>
+    <div class="profile-picture-container" (click)="changePhoto()">
+        <img [src]="user.photo" alt="Foto Profilo" class="profile-picture"/>
+        <ion-icon name="camera-outline" class="change-photo-icon"></ion-icon>
+    </div>
+
+    <div class="info-section">
+        <div class="input-group">
+            <label class="field-label">Nome</label>
+            <ion-item lines="none">
+                <ion-input [(ngModel)]="user.name"></ion-input>
+            </ion-item>
+        </div>
+
+        <div class="input-group">
+            <label class="field-label">Email</label>
+            <ion-item lines="none">
+                <ion-input [(ngModel)]="user.email" type="email"></ion-input>
+            </ion-item>
+        </div>
+
+        <div class="input-group" (click)="toggleDatePicker()">
+            <label class="field-label">Data di nascita</label>
+            <ion-item lines="none">
+                <ion-input [value]="user.birthDate | date:'dd/MM/yyyy'" readonly></ion-input>
+            </ion-item>
+        </div>
+
+        <ion-datetime
+                *ngIf="showDatePicker"
+                presentation="date"
+                (ionChange)="onDateChange($event)">
+        </ion-datetime>
+
+        <div class="input-group">
+            <label class="field-label">Paese</label>
+            <ion-item lines="none">
+                <ion-select [(ngModel)]="user.country" placeholder="Seleziona un paese">
+                    <ion-select-option *ngFor="let country of countries" [value]="country">
+                        {{ country }}
+                    </ion-select-option>
+                </ion-select>
+            </ion-item>
+        </div>
+
+        <ion-button expand="block" (click)="saveProfile()">Salva</ion-button>
+    </div>
+</ion-content>

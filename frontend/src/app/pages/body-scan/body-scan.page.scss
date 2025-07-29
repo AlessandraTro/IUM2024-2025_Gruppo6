@@ -1,0 +1,69 @@
+.body-scan-header {
+  --background: #f7e2d2;
+  --color: #000;
+}
+
+/* IMMAGINE DI MEDITAZIONE */
+.meditation-image {
+  border-radius: 12px;
+  margin-top: 16px;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  display: block;
+  margin: 16px auto;
+}
+
+/* TIME INDICATOR */
+.time-indicator {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  padding: 0 4px;
+  margin-top: -12px;
+  margin-bottom: 16px;
+  color: var(--ion-color-dark);
+}
+
+/* AUDIO CONTROLS */
+.audio-controls {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 32px;
+  margin-bottom: 1.5rem;
+}
+
+.audio-controls ion-icon {
+  color: var(--ion-color-medium);
+}
+
+.play-btn {
+  font-size: 48px;
+  color: var(--ion-color-primary);
+}
+
+/* BENEFIT BOX */
+.benefit-box {
+  background-color: #fdecec;
+  padding: 12px;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.benefit-box p {
+  margin: 0;
+  color: var(--ion-color-dark);
+}
+
+/* ICONS */
+:host .ionicon {
+  color: #fdecec;
+}
+
+/* HEADER */
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+  --color: #1c1c1c;
+}

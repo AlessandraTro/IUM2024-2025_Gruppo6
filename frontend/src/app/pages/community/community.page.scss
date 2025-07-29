@@ -1,0 +1,240 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* CONTAINER PRINCIPALE */
+.chat-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: url('/assets/SfondoChat.png') no-repeat center center;
+  background-size: cover;
+  width: 100%;
+  min-height: 100vh;
+  overflow-y: auto;
+  position: relative;
+  padding: 20px;
+}
+
+/* MESSAGGI */
+.message,
+.my-message,
+.other-message {
+  max-width: 75%;
+  padding: 10px 14px;
+  border-radius: 18px;
+  font-size: 15px;
+  line-height: 1.4;
+  word-break: break-word;
+  margin: 10px 0;
+}
+
+.my-message,
+.message.user {
+  align-self: flex-end;
+  background-color: #dbeafe;
+  color: #000;
+}
+
+.other-message,
+.message.bot {
+  align-self: flex-start;
+  background-color: #f0f4f8;
+  color: #333;
+  border: 1px solid #ddd;
+}
+
+.message p {
+  margin: 0;
+  padding: 0;
+}
+
+/* IONIC ELEMENTS */
+ion-card {
+  margin: 10px;
+  max-width: 75%;
+}
+
+ion-card-title {
+  font-weight: bold;
+}
+
+ion-input {
+  flex-grow: 1;
+}
+
+.card-custom {
+  -webkit-padding-start: 10px;
+  padding-inline-start: 10px;
+  -webkit-padding-end: 10px;
+  padding-inline-end: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+ion-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* HEADER */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.back-icon img,
+.help-icon img {
+  width: 24px;
+  height: 24px;
+}
+
+.header-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.community-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #007bff;
+}
+
+.online-status {
+  font-size: 14px;
+  color: #28a745;
+}
+
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+/* BOTTOM & TEXT AREA */
+.chat-area {
+  position: relative;
+  z-index: 2;
+  padding: 1rem 1rem 80px 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.footer-wrapper {
+  --background: transparent;
+  padding: 10px 8px;
+}
+
+.chat-bottom-bar {
+  display: flex;
+  justify-content: center;
+}
+
+.chat-pill {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 999px;
+  padding: 6px 10px;
+  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+}
+
+.pill-left {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 6px;
+}
+
+.chat-textbox {
+  border: none;
+  outline: none;
+  flex: 1;
+  font-size: 16px;
+  padding: 6px;
+  background: transparent;
+  color: #000;
+}
+
+.chat-icons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 2px;
+  padding-left: 8px;
+}
+
+.icon-btn {
+  background: none;
+  border: none;
+  padding: 2px;
+  font-size: 20px;
+  color: #333;
+}
+
+.iphone-bar {
+  width: 130px;
+  height: 5px;
+  background: #1b1b1b;
+  border-radius: 999px;
+  margin: 6px auto 0;
+}
+
+/* MODALE */
+.modal-content {
+  padding: 20px;
+  font-size: larger;
+}
+
+.regole,
+.regole-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.regole-wrapper {
+  gap: 24px;
+  padding: 20px;
+}
+
+.regole-titolo {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  font-weight: bold;
+}
+
+.intro-text {
+  font-size: 16px;
+  margin-bottom: 12px;
+  color: #333;
+  font-family: 'Times New Roman', serif;
+}
+
+.regola {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-family: 'Times New Roman', serif;
+  font-size: 15px;
+  background-color: #fdf8f1;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.regola-icon {
+  width: 28px;
+  height: 28px;
+  margin-top: 3px;
+}

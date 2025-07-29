@@ -1,0 +1,39 @@
+<app-header-impostazioni [subtitle]="'Notifiche'"></app-header-impostazioni>
+
+<ion-content>
+
+    <div class="settings-card">
+        <ion-item lines="none">
+            <ion-label>Consenti Notifiche</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="notificationSettings.consent" (ionChange)="saveSettings()"></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label>Notifiche push</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="notificationSettings.push" (ionChange)="saveSettings()"></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label>Suoni</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="notificationSettings.sound" (ionChange)="saveSettings()"></ion-toggle>
+        </ion-item>
+    </div>
+
+    <h3 class="mt-2">Notificami per...</h3>
+
+
+    <div class="settings-card">
+        <ion-item lines="none">
+            <ion-label>Novità nei contenuti</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="notificationSettings.newContent"
+                        (ionChange)="saveSettings()"></ion-toggle>
+        </ion-item>
+
+        <ion-item lines="none">
+            <ion-label>Novità nelle pratiche benessere</ion-label>
+            <ion-toggle slot="end" [(ngModel)]="notificationSettings.newWellness"
+                        (ionChange)="saveSettings()"></ion-toggle>
+        </ion-item>
+    </div>
+
+</ion-content>

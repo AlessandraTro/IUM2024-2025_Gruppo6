@@ -1,0 +1,193 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* CONTAINER PRINCIPALE */
+ion-content {
+  background: url('/assets/SfondoAreaBenessere.png') no-repeat center center fixed;
+  background-size: cover;
+  height: 100%;
+  width: 100%;
+  position: relative;
+}
+
+/* HEADER E SOTTOHEADER */
+.meditazione-header {
+  --background: #f7e2d2;
+  --color: #000;
+}
+
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+  --color: #1c1c1c;
+}
+
+/* LAYER SOVRAPPOSIZIONE */
+ion-content::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.3);
+  z-index: -1;
+}
+
+/* VARIABILI GLOBALE */
+:host {
+  --primary-color: #442f70;
+  --secondary-color: #e6e6e6;
+  --accent-color: #d199ea;
+  --card-background: #f6e5d8;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --chip-background: #f3f3f3;
+  --text-primary: #4a4a4a;
+  --text-secondary: #7b7b7b;
+  --footer-background: #ffffff;
+  --card-border-radius: 12px;
+  --chip-border-radius: 20px;
+  --play-icon-color: #000000;
+}
+
+/* SEARCHBAR */
+.search-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+ion-searchbar {
+  --background: #fff;
+  --color: #333;
+  --placeholder-color: #aaa;
+  --border-radius: 25px;
+  --padding-start: 12px;
+  --padding-end: 12px;
+  --border: 1px solid #ccc;
+}
+
+ion-searchbar::part(input) {
+  border-radius: 25px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* SEGMENTI */
+ion-segment {
+  margin-top: 10px;
+  --border-color: #ccc;
+  --background-activated: var(--accent-color);
+}
+
+ion-segment-button {
+  --color: var(--primary-color);
+  --border-radius: 10px;
+  --background-activated: var(--accent-color);
+}
+
+/* CARDS */
+.meditation-card,
+.flat-card {
+  margin-top: 16px;
+  --background: var(--card-background);
+  --box-shadow: 0 2px 8px var(--shadow-color);
+  --border-radius: var(--card-border-radius);
+}
+
+.card-content-ios {
+  -webkit-padding-start: 20px;
+  padding-inline-start: 15px;
+  -webkit-padding-end: 20px;
+  padding-inline-end: 4px;
+  padding-top: 15px;
+  padding-bottom: 14px;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+.meditation-card .chip-group {
+  margin-bottom: 8px;
+}
+
+.meditation-card .card-title {
+  font-size: 1.3rem;
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+.meditation-card .card-desc {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.meditation-card .play-icon {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  color: var(--play-icon-color);
+  font-size: 32px;
+}
+
+.flat-card h3,
+.flat-card p {
+  color: var(--text-primary);
+}
+
+.flat-card p {
+  color: var(--text-secondary);
+}
+
+/* SEZIONE TITLE */
+.section-title {
+  font-size: 1.4rem;
+  margin-top: 24px;
+  color: var(--text-primary);
+}
+
+/* FOOTER PERSONALIZZATO */
+ion-tab-bar {
+  --background: var(--footer-background);
+  --color: var(--primary-color);
+  --border-top: 1px solid #ddd;
+}
+
+ion-tab-button {
+  --color-selected: var(--primary-color);
+}
+
+ion-tab-button ion-label {
+  font-size: 12px;
+}
+
+/* CHIP */
+.chip-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+ion-chip {
+  background: #f1c6b0;
+  --color: #4a4a4a;
+  --border-radius: 20px;
+}
+
+ion-chip[color="orange"] {
+  --background: #fb7707;
+  --color: #fff;
+}
+
+/* MESSAGGI */
+h2 {
+  font-weight: bold;
+  color: var(--text-primary);
+}
+
+/* SELEZIONATO */
+ion-segment-button[aria-selected="true"] {
+  --background-activated: var(--primary-color);
+  --color: #fff;
+  border-bottom: 2px solid var(--primary-color);
+}

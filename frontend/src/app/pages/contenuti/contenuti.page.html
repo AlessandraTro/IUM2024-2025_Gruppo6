@@ -1,0 +1,109 @@
+<ion-header>
+    <ion-toolbar class="custom-header">
+        <div class="custom-back-title">
+            <div class="back-button" (click)="goBack()">
+                <ion-icon name="chevron-back" class="back-icon"></ion-icon>
+            </div>
+            <div class="header-title">Contenuti per te</div>
+        </div>
+    </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true" class="contenuti-content">
+
+    <div class="sottotitolo">
+        Rilassati con nuovi contenuti pensati per te
+    </div>
+
+    <!-- Blocchi evidenziati -->
+    <ion-grid>
+        <div class="card-container">
+
+            <div class="custom-card" role="button" tabindex="0" (click)="openLink('https://www.ilcorpoelamente.com/')">
+                <div class="card-text">
+                    <div class="titolo">Il Corpo e La Mente</div>
+                    <div class="sottotesto">Leggi un bel blog.</div>
+                </div>
+                <img class="card-img" src="assets/img/contenuti/corpoMente.png" alt="Il Corpo e La Mente">
+            </div>
+
+
+            <div class="custom-card"
+                 (click)="openLink('https://www.mondadori.it/percorsi-di-lettura/libri-sull-ansia/')">
+                <div class="card-text">
+                    <div class="titolo">Leggi</div>
+                    <div class="sottotesto">Fatti consigliare dei buoni libri</div>
+                </div>
+                <img class="card-img2" src="assets/img/contenuti/lettura.png" alt="Leggi" height="392" width="584">
+            </div>
+        </div>
+
+        <div (click)="openLink('https://open.spotify.com/show/6BO2ZoJ1KSzYhlfyfgElU7?si=U2vln3QXSSOscfi1yeQ8EQ')"
+             class="horizontal-card" style="background-image: url('assets/img/contenuti/AscoltaPodcast.png');">
+            <div class="card-text">
+                <div class="titolo">Ascolta dei bei Podcast</div>
+                <div class="sottotesto">Ascolta podcast e riconnettiti con te stesso</div>
+            </div>
+            <ion-icon class="play-icon" name="play-circle"></ion-icon>
+        </div>
+
+        <div (click)="openLink('https://youtube.com/@maddalenadimeditazioniguid1371?si=hiI9hBSFa-j0Dbs8')"
+             class="horizontal-card" style="background-image: url('assets/img/contenuti/meditazione.png');">
+            <div class="card-text">
+                <div class="titolo">Meditazione Guidata</div>
+                <div class="sottotesto">Vedi i video su youtube di Maddalena</div>
+                <div class="meditation-info">MEDITATION 8-15 MIN</div>
+            </div>
+            <ion-icon class="play-icon" name="play-circle"></ion-icon>
+        </div>
+    </ion-grid>
+
+
+    <!-- Sezione "Recommended for you" -->
+    <div class="recommended-title">
+        Recommended for you
+    </div>
+
+    <ion-grid class="newss">
+        <div class="recommended-grid">
+            <div (click)="openLink('https://www.youtube.com/playlist?list=PLRf3qXO-BTEZEmnXV2B7cnuoTN7VieDL2')"
+                 class="recommended-card">
+                <img src="assets/img/contenuti/audio.png" alt="Audio Motivazionali" class="recommended-img"/>
+                <div class="recommended-text">
+                    <div class="titolo">Audio Motivazionali</div>
+                    <div class="sottotesto">Pillole di Serenità</div>
+                </div>
+            </div>
+
+            <div (click)="openLink('https://open.spotify.com/show/0rnqBvAxj4mL2xTDpiJC1M')" class="recommended-card">
+                <img src="assets/img/contenuti/podcast.png" alt="Podcast" class="recommended-img"/>
+                <div class="recommended-text">
+                    <div class="titolo">Podcast</div>
+                    <div class="sottotesto">Popolari tra gli utenti simili a te</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="recommended-grid">
+            <div (click)="openLink('https://www.youtube.com/lascimmiayoga')" class="recommended-card">
+                <img src="assets/img/contenuti/video.png" alt="Video" class="recommended-img"/>
+                <div class="recommended-text">
+                    <div class="titolo">Video</div>
+                    <div class="sottotesto">Basato sui tuoi ultimi video visti</div>
+                </div>
+            </div>
+
+            <div (click)="openLink('https://www.youtube.com/watch?v=CevxZvSJLk8')" class="recommended-card">
+                <img src="assets/img/contenuti/forYou.png" alt="Per Sara..." class="recommended-img"/>
+                <div class="recommended-text">
+                    <div class="titolo">Per {{ username }}...</div>
+                    <div class="sottotesto">Rimani stupito dalle nostre proposte</div>
+                </div>
+            </div>
+        </div>
+    </ion-grid>
+</ion-content>
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>

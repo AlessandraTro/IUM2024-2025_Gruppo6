@@ -1,0 +1,263 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* SEZIONE CONTENUTI */
+.contenuti-content {
+  --background: #fff5ed;
+  padding: 16px;
+}
+
+.sottotitolo {
+  padding: 12px 0;
+  font-size: 16px;
+  color: #666;
+  display: flex;
+  justify-content: center;
+}
+
+/* BOX GENERICO */
+.box {
+  border-radius: 20px;
+  padding: 16px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.orizzontale {
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.evidenziato {
+  background: #FFC97E;
+}
+
+.evidenziato-scuro {
+  background: #F29A31;
+  color: black;
+}
+
+.consigliato {
+  background: #fff9c4;
+}
+
+/* TESTI */
+.titolo {
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.sottotesto {
+  font-size: 13px;
+  color: #666;
+}
+
+.meditation-info {
+  font-size: 11px;
+  font-weight: bold;
+  margin-top: 4px;
+}
+
+/* RECOMMENDED */
+.recommended-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 20px 0 10px;
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
+.recommended-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.recommended-card {
+  width: 48%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: none;
+  position: relative;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.recommended-img {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  object-fit: cover;
+}
+
+.recommended-text {
+  padding-top: 8px;
+  align-items: center;
+  flex-direction: column;
+  margin: 0 1px 6px 15px;
+}
+
+.recommended-text .titolo {
+  color: #222;
+}
+
+.recommended-text .sottotesto {
+  color: #999;
+}
+
+/* CARD GENERICHE */
+.custom-card,
+.horizontal-card {
+  border-radius: 20px;
+  padding: 16px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  cursor: pointer;
+  user-select: none;
+  pointer-events: auto;
+  z-index: 1;
+}
+
+.custom-card {
+  background-color: #FFC97E;
+  width: 48%;
+  min-height: 120px;
+}
+
+.custom-card * {
+  pointer-events: none;
+}
+
+.card-text {
+  padding-right: 25px;
+  z-index: 2;
+  margin-top: 15px;
+  color: black;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+}
+
+.card-img,
+.card-img2 {
+  position: absolute;
+  top: 9px;
+  height: 64px;
+  object-fit: contain;
+  pointer-events: none;
+}
+
+.card-img {
+  right: 0;
+  max-width: 50%;
+}
+
+.card-img2 {
+  right: -37px;
+}
+
+.horizontal-card {
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 12px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  min-height: 100px;
+  color: black;
+}
+
+.horizontal-card .card-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-size: 14px;
+}
+
+.horizontal-card .sottotesto {
+  color: #333;
+}
+
+.horizontal-card .meditation-info {
+  margin-top: 4px;
+}
+
+/* ICONA PLAY */
+.play-icon {
+  height: 32px;
+  width: 32px;
+  flex-shrink: 0;
+}
+
+/* HEADER CUSTOM */
+.custom-header {
+  --background: #f5e4d9;
+  padding: 0 12px;
+}
+
+.custom-back-title {
+  display: flex;
+  align-items: center;
+  height: 44px;
+  justify-content: space-between;
+  width: 100%;
+  color: black;
+}
+
+.back-button {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.back-icon {
+  font-size: 20px;
+  margin-right: 4px;
+}
+
+.back-text {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.header-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 0 auto;
+  position: absolute;
+  left: 0;
+  right: 0;
+  text-align: center;
+  pointer-events: none;
+}
+
+/* LINK */
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+/* EXTRA */
+.newss {
+  padding-bottom: 20px;
+}

@@ -1,0 +1,140 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* SEZIONE BANNER SUPERIORE */
+.top-banner {
+  background-color: #f2d8c6;
+  padding: 12px;
+}
+
+.area-benessere-header {
+  --background: #f7e2d2;
+  --color: #000;
+}
+
+/* HEADER CON INFO UTENTE */
+.user-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.welcome-message {
+  flex: 1;
+  margin-left: 10px;
+  font-size: 15px;
+  line-height: 1.2;
+}
+
+.stats-icon ion-icon {
+  font-size: 24px;
+  padding: 6px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: white;
+}
+
+/* CITAZIONE MOTIVAZIONALE */
+.quote {
+  background-color: #f5d9c7;
+  padding: 10px;
+  border-radius: 10px;
+  font-size: 15px;
+  margin-top: 12px;
+  line-height: 1.4;
+  font-style: italic;
+  text-align: center;
+}
+
+/* BOX TILE */
+.tile,
+.tile-large {
+  border-radius: 14px;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-weight: 600;
+  padding: 16px;
+  margin: 12px 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tile-large {
+  width: 90%;
+  background-color: #8165d6;
+  color: white;
+}
+
+.tile-row {
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+}
+
+.tile-icon {
+  width: 34px;
+  height: 34px;
+  margin-bottom: 8px;
+}
+
+/* COLORI PER I RICHIAMI */
+.respiration {
+  background-color: #b295d6;
+  display: flex;
+  flex-direction: row;
+}
+
+.soundscape {
+  background-color: #e9b3d6;
+  display: flex;
+  flex-direction: row;
+}
+
+.obiettivi {
+  background-color: #f6c1c3;
+}
+
+.mood {
+  background-color: #f8d8d6;
+}
+
+/* SEZIONE NOTE */
+.note-section {
+  margin: 20px;
+}
+
+.note-section textarea {
+  width: 100%;
+  min-height: 90px;
+  border: none;
+  border-radius: 10px;
+  padding: 12px;
+  background-color: #f5e0d3;
+  font-family: inherit;
+  font-size: 14px;
+  resize: none;
+}
+
+/* MESSAGGIO SEZIONE "NO OBIETTIVI" */
+.no-obiettivi {
+  text-align: center;
+  font-style: italic;
+  color: #deb1a1;
+  margin-top: 30px;
+}
+
+/* TOP HEADER */
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+  --color: #1c1c1c;
+}

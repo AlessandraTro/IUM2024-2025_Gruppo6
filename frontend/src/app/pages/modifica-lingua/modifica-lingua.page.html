@@ -1,0 +1,29 @@
+<app-header-impostazioni [subtitle]="'Lingua'"></app-header-impostazioni>
+
+<ion-content class="custom-content">
+    <ion-list class="language-list">
+        <ion-item
+                button
+                detail="false"
+                *ngFor="let lang of languages"
+                (click)="selectLanguage(lang.value)"
+                [class.selected]="selectedLanguage === lang.value"
+        >
+            <ion-label>{{ lang.label }}</ion-label>
+            <ion-icon
+                    *ngIf="selectedLanguage === lang.value"
+                    name="checkmark-circle"
+                    color="primary"
+                    slot="end"
+            ></ion-icon>
+            <ion-icon
+                    *ngIf="selectedLanguage !== lang.value"
+                    name="ellipse"
+                    class="unselected"
+                    slot="end"
+            ></ion-icon>
+        </ion-item>
+    </ion-list>
+</ion-content>
+
+

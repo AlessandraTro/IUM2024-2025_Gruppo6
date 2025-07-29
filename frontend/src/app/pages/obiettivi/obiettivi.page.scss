@@ -1,0 +1,82 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* HEADER */
+ion-toolbar.top-header,
+.obiettivi-header {
+  --color: #1c1c1c;
+}
+
+ion-toolbar.top-header {
+  --background: #f3e3d9;
+}
+
+.obiettivi-header {
+  --background: #f7e2d2;
+  --color: #000;
+}
+
+/* OBIECTIVI */
+ion-item.goal-item {
+  --background: transparent;
+  --ion-item-background: transparent;
+  --inner-border-width: 0;
+  --padding-start: 0;
+  --padding-end: 0;
+  --min-height: auto;
+
+  background-color: #f3e3d9;
+  border-radius: 12px;
+  margin-bottom: 14px;
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  box-shadow: none;
+}
+
+/* TESTO DELL'OBIETTIVO */
+.goal-label {
+  font-weight: 600;
+  font-size: 15px;
+  color: #1c1c1c;
+  margin-right: 12px;
+  white-space: normal;
+}
+
+/* CHECKBOX LILLA */
+.custom-checkbox {
+  --background-checked: #7752b2;
+  --checkmark-color: white;
+  --border-radius: 50%;
+  --size: 20px;
+}
+
+/* MESSAGGIO LISTA VUOTA */
+.no-obiettivi {
+  text-align: center;
+  font-style: italic;
+  color: #888;
+  margin-top: 30px;
+}
+
+/* STILE DEI BOTTONI */
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 30px;
+  flex-wrap: wrap;
+}
+
+.custom-btn {
+  background-color: #f3e3d9;
+  color: #1c1c1c;
+  border: 1px solid #d3c1b3;
+  border-radius: 8px;
+  padding: 10px 16px;
+  font-weight: bold;
+  font-size: 13px;
+  flex: 1;
+  text-align: center;
+}

@@ -1,0 +1,49 @@
+<ion-header>
+    <ion-toolbar class="obiettivi-header">
+        <div class="back-button" (click)="goBack()">
+            <ion-icon name="chevron-back" class="back-icon"></ion-icon>
+        </div>
+        <ion-title>Obiettivi</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+    <!-- Messaggio se lista vuota -->
+    <div *ngIf="obiettivi.length === 0" class="no-obiettivi">
+        <p><em>Nessun obiettivo ancora presente.</em></p>
+    </div>
+
+    <!-- Lista obiettivi -->
+    <ion-list *ngIf="obiettivi.length > 0">
+        <ion-item *ngFor="let obiettivo of obiettivi" class="goal-item" lines="none">
+            <ion-label class="goal-label">
+                {{ obiettivo.titolo }}
+            </ion-label>
+            <ion-checkbox
+                    slot="end"
+                    [(ngModel)]="obiettivo.completato"
+                    (ionChange)="toggleCheckbox()"
+                    class="custom-checkbox">
+            </ion-checkbox>
+        </ion-item>
+    </ion-list>
+
+    <!-- Bottoni -->
+    <div class="button-row">
+        <button class="custom-btn" (click)="eliminaObiettivo()">ELIMINA</button>
+        <button class="custom-btn" (click)="modificaObiettivo()">MODIFICA</button>
+        <button class="custom-btn" (click)="aggiungiObiettivo()">AGGIUNGI</button>
+    </div>
+
+</ion-content>
+<ion-footer>
+    <app-footer></app-footer>
+</ion-footer>
+
+
+
+
+
+
+

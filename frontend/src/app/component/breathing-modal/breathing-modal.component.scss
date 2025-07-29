@@ -1,0 +1,74 @@
+.modal-bg {
+  --background: #f4e2d8;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* HEADER */
+.custom-header {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-weight: bold;
+  font-size: 18px;
+  margin: 20px 0;
+}
+
+/* ICONA BUTTON */
+.icon-btn {
+  background: white;
+  border-radius: 12px;
+  padding: 8px;
+  font-size: 18px;
+}
+
+/* ANIMAZIONE CENTRALE */
+.circle-animation {
+  display: flex;
+  justify-content: center;
+}
+
+.circle-animation img {
+  width: 200px;
+  height: auto;
+  margin: 30px 0;
+}
+
+/* TIMER CENTRALE */
+.timer {
+  font-size: 28px;
+  font-weight: bold;
+  margin: 20px 0;
+  display: flex;
+  justify-content: center;
+}
+
+/* GRUPPO BOTTONI */
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.modal-btn {
+  background: white;
+  border-radius: 30px;
+  padding: 12px 24px;
+  font-weight: bold;
+  border: none;
+}
+
+/* LAYOUT CENTRATO */
+.button-cust,
+.full {
+  display: flex;
+  justify-content: center;
+}
+
+.full {
+  width: 90%;
+}

@@ -1,3 +1,8 @@
+* {
+  font-family: 'Times New Roman', Times, serif;
+}
+
+/* BACKGROUND */
 .welcome-background {
   background: url('/assets/Sfondo.png') no-repeat center center;
   background-size: cover;
@@ -7,12 +12,10 @@
   top: 0;
   left: 0;
 }
-* {
-  font-family: 'Times New Roman', Times, serif;
-}
 
+/* OVERLAY */
 .overlay {
-  backdrop-filter: brightness(0.85); // facoltativo per migliorare leggibilità
+  backdrop-filter: brightness(0.85);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -23,10 +26,12 @@
   padding: 20px;
 }
 
+/* LOGO */
 .logo {
   width: 200px;
 }
 
+/* TITOLI */
 .welcome-title {
   font-size: 24px;
   font-weight: bold;
@@ -38,6 +43,7 @@
   margin: 10px auto 30px;
 }
 
+/* BOTTONI */
 .login-btn {
   --background: #d7bcb7;
   color: white;
